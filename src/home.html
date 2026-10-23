@@ -379,7 +379,9 @@ nav.top.scrolled{border-bottom-color:var(--line)}
 .sliders{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:28px;display:grid;gap:18px}
 .sl .top{display:flex;justify-content:space-between;gap:10px;font-size:14.5px;font-weight:500}
 .sl .top .n{font:500 12px var(--f-mono);color:var(--t-blue);margin-inline-end:8px}
-.sl .top .val{font:500 13px var(--f-mono);color:var(--muted);white-space:nowrap}
+.sl .top .val{font:500 13px var(--f-mono);color:var(--muted);text-align:end}
+.assess>*{min-width:0}
+@media (max-width:720px){.sl .top{flex-direction:column;gap:2px}.sl .top .val{text-align:start}}
 .sl input[type=range]{width:100%;margin-top:8px;accent-color:var(--blue);cursor:pointer}
 .result{background:var(--night);color:#fff;border-radius:18px;padding:28px;position:relative;overflow:hidden}
 .result .radar svg{width:100%;max-width:400px;margin:0 auto;direction:ltr}
@@ -565,10 +567,10 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
     </div>
     <div class="stats rv">
       <div class="stat"><div class="num"><span class="pre" data-ar="">$</span><span class="v" data-count="4.05" data-dec="2">4.05</span><span class="u" data-ar=" مليار">bn</span></div><div class="cap" data-ar="إنفاق المملكة على الأمن السيبراني بالدولار في 2024، بنمو 14% على أساس سنوي">Saudi cybersecurity spend, 2024, up 14% year on year</div><div class="src" data-ar="الهيئة الوطنية للأمن السيبراني · المؤشرات الاقتصادية 2025">NCA · Key Economic Indicators 2025</div></div>
-      <div class="stat"><div class="num"><span class="pre" data-ar="">$</span><span class="v" data-count="7.8" data-dec="1">7.8</span><span class="u" data-ar=" مليار">bn</span></div><div class="cap" data-ar="الرقم التخطيطي لعام 2030 بالدولار، ضمن نطاق 7.2–8.4 مليار المبني على أرقام الهيئة">Planning figure for 2030, inside the NCA-based $7.2–8.4bn band</div><div class="src" data-ar="تحليل هيكلة">HAYKALAH analysis</div></div>
+      <div class="stat"><div class="num"><span class="pre" data-ar="">$</span><span class="v" data-count="7.8" data-dec="1">7.8</span><span class="u" data-ar=" مليار">bn</span></div><div class="cap" data-ar="الحجم المتوقع للسوق بالدولار في 2030، بنمو سنوي 10–13% على رقم الهيئة لعام 2024">Projected market size for 2030, from 10–13% annual growth on the NCA's 2024 figure</div><div class="src" data-ar="توقعات مبنية على أرقام الهيئة">Projection on NCA data</div></div>
       <div class="stat"><div class="num"><span class="v" data-count="100" data-dec="0">100</span><span class="u">/100</span></div><div class="cap" data-ar="مؤشر الأمن السيبراني العالمي 2024، المستوى الأول «نموذج يُحتذى»">ITU Global Cybersecurity Index 2024, Tier 1 “Role-modelling”</div><div class="src" data-ar="الاتحاد الدولي للاتصالات، الإصدار الخامس">ITU GCI, 5th edition</div></div>
       <div class="stat"><div class="num"><span class="v" data-ar="الأول">#1</span></div><div class="cap" data-ar="عالمياً في مؤشر الأمن السيبراني بالكتاب السنوي للتنافسية العالمية، للأعوام 2024 و2025 و2026">Worldwide on IMD's cybersecurity indicator, 2024, 2025 and 2026</div><div class="src" data-ar="IMD، عبر الهيئة">IMD WCY, via NCA</div></div>
-      <div class="stat"><div class="num"><span class="pre" data-ar="">&gt;</span><span class="v" data-count="20000" data-dec="0">20,000</span><span class="u" data-ar="+"></span></div><div class="cap" data-ar="العجز الوطني في متخصصي الأمن السيبراني، وهو القيد الحاكم للقطاع">National shortfall of cybersecurity specialists, the binding constraint</div><div class="src" data-ar="تقرير السوق، الإصدار 3">Market Report V3</div></div>
+      <div class="stat"><div class="num"><span class="pre" data-ar="">&gt;</span><span class="v" data-count="20000" data-dec="0">20,000</span><span class="u" data-ar="+"></span></div><div class="cap" data-ar="العجز الوطني في متخصصي الأمن السيبراني، وهو القيد الحاكم للقطاع">National shortfall of cybersecurity specialists, the binding constraint</div><div class="src" data-ar="تقديرات القطاع">Industry estimates</div></div>
     </div>
   </div>
   <div class="ticker" aria-hidden="true"><div class="tk"><span>ECC-2:2024</span><span>SAMA CSF</span><span>OTCC-1:2022</span><span>CCC-2:2024</span><span>NCNICC-1:2025</span><span>PDPL</span><span>NDMO</span><span>MITRE ATT&amp;CK</span><span>24/7 SOC</span><span>MDR</span><span>DFIR</span><span>ECC-2:2024</span><span>SAMA CSF</span><span>OTCC-1:2022</span><span>CCC-2:2024</span><span>NCNICC-1:2025</span><span>PDPL</span><span>NDMO</span><span>MITRE ATT&amp;CK</span><span>24/7 SOC</span><span>MDR</span><span>DFIR</span></div></div>
@@ -681,18 +683,6 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
       <a href="/services/sama-csf/" data-ar="إطار البنك المركزي السعودي">SAMA Cyber Security Framework</a>
       <a href="/services/incident-response/" data-ar="الاستجابة للحوادث والأدلة الرقمية">Incident response &amp; forensics</a>
     </nav>
-    <div class="mix rv">
-      <div>
-        <div class="label" data-ar="هيكل الإيرادات · خطة السنة الخامسة">Revenue architecture · Year 5 plan</div>
-        <h3 style="margin-top:10px;font-size:26px" data-ar="74.4% إيرادات متكررة. فالعقود المرتبطة بالامتثال لا تُلغى بسهولة.">74.4% recurring. Compliance-linked contracts do not churn easily.</h3>
-        <p class="muted" style="margin-top:12px;font-size:14.5px" data-ar="يشتري العميل دليلاً لتقييم يتكرر، لذا فالإلغاء لا يوفّر مالاً، بل يُنشئ ملاحظة تدقيق.">The buyer purchases evidence for an assessment that recurs, so cancelling does not save money; it creates a finding.</p>
-      </div>
-      <div>
-        <div class="mixbar" id="mixbar"></div>
-        <div class="mixlegend" id="mixlegend"></div>
-        <div class="source" data-ar="المصدر: النموذج المالي لسايبر هيكلة، الإصدار 4، ورقة الإيرادات. مزيجٌ مخطط، استرشادي.">Source: CyberHAYKALAH KSA Financial Model V4, Revenue sheet. Planned mix, indicative.</div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -839,7 +829,7 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
       <div data-ar="<span>INC-0417</span> · محللك المسمّى يتابعها. التحديث التالي 04:30."><span>INC-0417</span> · Your named analyst is on it. Next update 04:30.</div>
       <div data-ar="<span>ECC-2</span> · 67 من 108 ضوابط مُثبَتة هذا الشهر. 3 فجوات بمسؤولين محددين."><span>ECC-2</span> · 67 of 108 controls evidenced this month. 3 gaps, owners assigned.</div>
     </div>
-    <p class="source rv" data-ar="الوعود التشغيلية توضيحية، وتسري بعد تشغيل الخدمة (حوكمة الهوية، البند CP-6).">Operating promises are illustrative and apply once the service is live (brand governance CP-6).</p>
+    <p class="source rv" data-ar="الأمثلة التشغيلية توضيحية.">Operating examples are illustrative.</p>
   </div>
 </section>
 
@@ -849,23 +839,23 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
   <div class="wrap">
     <div class="sec-head rv">
       <div class="label" data-ar="09 · خارطة الطريق">09 · Roadmap</div>
-      <h2 data-ar="خمس بوابات إثبات. كل مرحلة تُطلق مقابل دليل، لا مقابل نقد.">Five proof gates. Each stage is released against evidence, not cash.</h2>
-      <p class="lead" data-ar="لا يبدأ شيء في المرحلة التالية قبل إثبات البوابة السابقة، ولكل بوابة معيار إيقاف معلن.">Nothing in the next stage starts until the gate before it is evidenced, and every gate has a stated kill criterion.</p>
+      <h2 data-ar="خمس مراحل، من التأسيس إلى الانتشار الوطني.">Five stages, from foundation to national scale.</h2>
+      <p class="lead" data-ar="كل مرحلة تُبنى على سابقتها: ننتقل إلى التالية حين تثبت سابقتها في التشغيل الفعلي.">Each stage builds on the one before: we move on when the previous stage is proven in live operation.</p>
     </div>
     <div class="gates">
-      <div class="gatec rv" style="--c:var(--blue);--c2:var(--t-blue)"><div class="g">G1</div><h4 data-ar="التأسيس">Establish</h4><p data-ar="التأسيس والسجل التجاري وقيادة مسمّاة.">Incorporation, commercial registration and named leadership.</p><div class="ev" data-ar="الدليل: السجل التجاري · شغل أربع وظائف قيادية">Evidence: CR · four leadership roles filled</div></div>
-      <div class="gatec rv" style="--c:var(--cyan);--c2:var(--t-cyan)"><div class="g">G2</div><h4 data-ar="بناء المنصة">Build the platform</h4><p data-ar="مركز عمليات ومنصة بيانات داخل المملكة، وفريق محللين سعوديين مؤهلين.">In-Kingdom SOC, data platform and a qualified Saudi analyst bench.</p><div class="ev" data-ar="الدليل: المنصة قائمة · المحللون على رأس العمل">Evidence: platform live · analysts onboarded</div></div>
-      <div class="gatec rv" style="--c:var(--violet);--c2:var(--t-violet)"><div class="g">G3</div><h4 data-ar="التشغيل على مدار الساعة">Operate 24/7</h4><p data-ar="عمليات قائمة داخل المملكة، مع اختبار الأتمتة والإنتاجية مقابل الحد الذي يقرّه مجلس الإدارة.">In-Kingdom operations live; automation and productivity tested against the board threshold.</p><div class="ev" data-ar="الدليل: نسبة الأتمتة · أزمنة الاستجابة">Evidence: automation ratio · response times</div></div>
-      <div class="gatec rv" style="--c:var(--magenta);--c2:var(--t-magenta)"><div class="g">G4</div><h4 data-ar="التوسع">Scale</h4><p data-ar="توسيع خطوط الخدمة والقطاعات، مع إثبات الإنتاجية قبل إطلاق رأس مال التوسع.">Expand service lines and sectors; productivity proven before scale-up capital is released.</p><div class="ev" data-ar="الدليل: الاحتفاظ بالعملاء · الهامش لكل بيئة">Evidence: retention · margin per environment</div></div>
-      <div class="gatec rv" style="--c:var(--lime);--c2:var(--t-lime)"><div class="g">G5</div><h4 data-ar="الانتشار الوطني">National scale</h4><p data-ar="مشغّل وطني على مدار الساعة يخدم مؤسسات المملكة الخاضعة للتنظيم في مختلف القطاعات.">A national 24/7 operator serving the Kingdom's regulated institutions across sectors.</p><div class="ev" data-ar="الدليل: قاعدة عملاء متعددة القطاعات">Evidence: multi-sector client base</div></div>
+      <div class="gatec rv" style="--c:var(--blue);--c2:var(--t-blue)"><div class="g">G1</div><h4 data-ar="التأسيس">Establish</h4><p data-ar="التأسيس والسجل التجاري وقيادة مسمّاة.">Incorporation, commercial registration and named leadership.</p><div class="ev" data-ar="المؤشر: الشركة مسجّلة · الفريق القيادي مكتمل">Milestone: company registered · leadership in place</div></div>
+      <div class="gatec rv" style="--c:var(--cyan);--c2:var(--t-cyan)"><div class="g">G2</div><h4 data-ar="بناء المنصة">Build the platform</h4><p data-ar="مركز عمليات ومنصة بيانات داخل المملكة، وفريق محللين سعوديين مؤهلين.">In-Kingdom SOC, data platform and a qualified Saudi analyst bench.</p><div class="ev" data-ar="المؤشر: المنصة قائمة · المحللون على رأس العمل">Milestone: platform live · analysts onboarded</div></div>
+      <div class="gatec rv" style="--c:var(--violet);--c2:var(--t-violet)"><div class="g">G3</div><h4 data-ar="التشغيل على مدار الساعة">Operate 24/7</h4><p data-ar="عمليات قائمة داخل المملكة على مدار الساعة، مع قياس الأتمتة وأزمنة الاستجابة.">In-Kingdom operations live around the clock, with automation and response times measured.</p><div class="ev" data-ar="المؤشر: تشغيل على مدار الساعة">Milestone: 24/7 operations live</div></div>
+      <div class="gatec rv" style="--c:var(--magenta);--c2:var(--t-magenta)"><div class="g">G4</div><h4 data-ar="التوسع">Scale</h4><p data-ar="توسيع خطوط الخدمة والقطاعات بعد إثبات العمليات على نطاق واسع.">Expand service lines and sectors once operations are proven at scale.</p><div class="ev" data-ar="المؤشر: رضا العملاء وجودة الخدمة">Milestone: client retention and service quality</div></div>
+      <div class="gatec rv" style="--c:var(--lime);--c2:var(--t-lime)"><div class="g">G5</div><h4 data-ar="الانتشار الوطني">National scale</h4><p data-ar="مشغّل وطني على مدار الساعة يخدم مؤسسات المملكة الخاضعة للتنظيم في مختلف القطاعات.">A national 24/7 operator serving the Kingdom's regulated institutions across sectors.</p><div class="ev" data-ar="المؤشر: قاعدة عملاء متعددة القطاعات">Milestone: multi-sector client base</div></div>
     </div>
     <div class="talent">
-      <div class="t rv"><div class="num">4.8</div><p data-ar="موظفاً لكل مقعد يعمل على مدار الساعة، والحد الأدنى للتشغيل نحو 41 موظفاً.">people per continuously staffed 24/7 seat. The operating floor sits near 41 people.</p></div>
+      <div class="t rv"><div class="num">4.8</div><p data-ar="موظفاً لكل مقعد يعمل على مدار الساعة، وهو ما يجعل بناء مركز داخلي مكلفاً.">people for every seat staffed around the clock, which is why an in-house 24/7 centre is costly to build.</p></div>
       <div class="t rv"><div class="num" data-ar="+13,000">13,000+</div><p data-ar="مستفيد يستهدفهم برنامج CyberIC في مرحلته الثانية التي أُطلقت في 21 مايو 2025.">beneficiaries targeted by CyberIC Phase 2, launched 21 May 2025.</p></div>
       <div class="t rv"><div class="num">9,600</div><p data-ar="متدرب في الأكاديمية الوطنية للأمن السيبراني خلال النصف الأول من 2025 وحده.">trainees at the National Cybersecurity Academy in H1 2025 alone.</p></div>
       <div class="t rv"><div class="num">100%</div><p data-ar="سعوديون في وظائف الأمن السيبراني، كما يشترط الضابط 1-2-2 في ECC-2.">Saudi nationals in cybersecurity roles, as ECC-2 control 1-2-2 requires.</p></div>
     </div>
-    <p class="source rv" data-ar="المصادر: الهيئة الوطنية للأمن السيبراني؛ CyberIC؛ خطة رأس المال البشري (الإصدار 4)؛ دراسة الجدوى (الإصدار 4). البوابات وفق خطة العمل (الإصدار 4). استرشادية.">Sources: NCA; CyberIC; Human Capital Plan V4; Feasibility Study V4. Gates per Business Plan V4. Indicative.</p>
+    <p class="source rv" data-ar="المصادر: الهيئة الوطنية للأمن السيبراني؛ CyberIC؛ الأكاديمية الوطنية للأمن السيبراني.">Sources: NCA; CyberIC; National Cybersecurity Academy.</p>
   </div>
 </section>
 
@@ -1051,8 +1041,8 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
      ar:{n:"الاستجابة",d:"الاحتواء والاستئصال والتعافي، مع استجابة للحوادث بعقد احتفاظ واستدعاء، يقودها مختصون سعوديون في الاستجابة للحوادث.",b:["زمن الاستجابة في تقرير شهري","عقد احتفاظ للأدلة الرقمية مع الاستدعاء","حفظ الأدلة للجهة المنظِّمة"],k:[["04:12","احتواء توضيحي"],["24/7","استجابة جاهزة"]]}},
     {n:"Remediate",c:"#FF8A3D",d:"Close the root cause, not just the incident: configuration, identity, cloud and application fixes, verified by testing.",b:["Root cause named in every report","Fix verified by re-test","Control gaps tracked to closure"],k:[["108","ECC-2 controls tracked"],["re-test","on every fix"]],
      ar:{n:"المعالجة",d:"معالجة السبب الجذري لا الحادثة فحسب: إصلاحات في الإعدادات والهويات والسحابة والتطبيقات، يُتحقق منها بالاختبار.",b:["السبب الجذري مسمّى في كل تقرير","التحقق من كل إصلاح بإعادة الاختبار","متابعة فجوات الضوابط حتى إغلاقها"],k:[["108","ضابطاً متابَعاً في ECC-2"],["إعادة اختبار","لكل إصلاح"]]}},
-    {n:"Learn",c:"#C6F432",d:"Content flows back into detection. Each incident improves protection for every environment we monitor; this is the compounding asset.",b:["Post-incident review per case","New rules shipped to every client","Quarterly maturity reporting"],k:[["62","environments by Year 5 (plan)"],["92%","planned net revenue retention"]],
-     ar:{n:"التعلّم",d:"يعود المحتوى إلى الرصد. فكل حادثة تحسّن الحماية لكل بيئة نراقبها، وهذا هو الأصل الذي تتراكم قيمته.",b:["مراجعة بعد كل حادثة","قواعد جديدة تُطلق لجميع العملاء","تقارير نضج ربع سنوية"],k:[["62","بيئة بحلول السنة الخامسة (خطة)"],["92%","معدل الاحتفاظ بالإيرادات المخطط"]]}}
+    {n:"Learn",c:"#C6F432",d:"Content flows back into detection. Each incident improves protection for every environment we monitor; this is the compounding asset.",b:["Post-incident review per case","New rules shipped to every client","Quarterly maturity reporting"],k:[["6","stages in one loop"],["every","client gets each new rule"]],
+     ar:{n:"التعلّم",d:"يعود المحتوى إلى الرصد. فكل حادثة تحسّن الحماية لكل بيئة نراقبها، وهذا هو الأصل الذي تتراكم قيمته.",b:["مراجعة بعد كل حادثة","قواعد جديدة تُطلق لجميع العملاء","تقارير نضج ربع سنوية"],k:[["6","مراحل في دورة واحدة"],["الجميع","يحصل كل عميل على كل قاعدة جديدة"]]}}
   ];
   const ls=$("loopSvg"), cx=260, cy=260, rr=180, panel=$("stagePanel"); let cur=0;
   function renderLoop(){
@@ -1104,7 +1094,7 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
   $("sectorSel").onclick=e=>{const b=e.target.closest(".chip");if(!b)return;sector=b.dataset.s;document.querySelectorAll("#sectorSel .chip").forEach(c=>c.classList.toggle("on",c===b));renderSvc()};
 
   const MIX=[["Managed detection & response","الرصد والاستجابة المُدارة",55.0,"#00D1FF","R"],["GRC & compliance retainers","عقود الحوكمة والامتثال",10.2,"#0066FF","R"],["DFIR retainers","عقود الاحتفاظ للأدلة الرقمية",9.2,"#FF3D9A","R"],["Penetration testing","اختبار الاختراق",13.8,"#8B5CFF","O"],["Cloud & application security","أمن السحابة والتطبيقات",7.2,"#FF8A3D","O"],["DFIR call-outs","استدعاءات الأدلة الرقمية",4.6,"#C6F432","O"]];
-  function renderMix(){const i=ar()?1:0;
+  function renderMix(){if(!$("mixbar"))return;const i=ar()?1:0;
     $("mixbar").innerHTML=MIX.map(m=>`<span style="width:${m[2]}%;background:${m[3]}" title="${m[i]}: ${m[2]}%">${m[2]>8?m[2]+"%":""}</span>`).join("");
     $("mixlegend").innerHTML=MIX.map(m=>`<div><span><i style="background:${m[3]}"></i>${m[i]}</span><span class="mono">${m[2].toFixed(1)}% <span class="muted" style="font-size:11px">${m[4]==="R"?(ar()?"متكرر":"recurring"):(ar()?"لمرة واحدة":"one-time")}</span></span></div>`).join("")}
 

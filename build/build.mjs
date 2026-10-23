@@ -17,7 +17,7 @@ import { PAGES, HOME, UI, STAGES } from "./pages.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const SRC = path.join(ROOT, "src");
-const OUT = ROOT;
+const OUT = path.join(ROOT, "docs"); // GitHub Pages publishes main:/docs, so src/ and build/ stay private
 const SITE = "https://cybrhyk.com";
 const EMAIL = "cyber@haykalah.com";
 const PORT = 8799;
@@ -284,7 +284,9 @@ write("sitemap.xml", `<?xml version="1.0" encoding="UTF-8"?>
 ${pairs.flatMap(([en, ar]) => [urlEntry(en, en, ar), urlEntry(ar, en, ar)]).join("\n")}
 </urlset>
 `);
-write("robots.txt", `User-agent: *\nAllow: /\nDisallow: /src/\nDisallow: /build/\n\nSitemap: ${SITE}/sitemap.xml\n`);
+write("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${SITE}/sitemap.xml\n`);
+write("CNAME", "cybrhyk.com\n");
+write(".nojekyll", "");
 write("llms.txt", `# Cyber HAYKALAH
 
 > Cyber HAYKALAH (سايبر هيكلة), a HAYKALAH company, runs security operations for financial, enterprise and private-sector clients in Saudi Arabia: a 24/7 managed SOC with managed detection and response, governance and compliance evidence for the NCA Essential Cybersecurity Controls (ECC-2:2024) and the SAMA Cyber Security Framework, incident response and digital forensics, penetration testing, and cloud security. Based in Riyadh and Jeddah. Contact: ${EMAIL}.
