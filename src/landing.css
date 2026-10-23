@@ -45,3 +45,7 @@
 .lp-related span{font-size:14px;color:var(--t-blue)}
 @media (max-width:1024px){.lp-hero .grid{grid-template-columns:1fr}.lp-cards,.lp-related{grid-template-columns:1fr 1fr}.lp-steps{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:720px){.lp-cards,.lp-related,.lp-fw{grid-template-columns:1fr}.lp-steps{grid-template-columns:1fr 1fr}.lp-fw div{grid-template-columns:1fr;gap:6px}}
+
+.lp-side{display:grid;gap:16px}
+.lp-photo{margin:0;border-radius:22px;overflow:hidden;aspect-ratio:16/9;box-shadow:0 24px 60px -30px rgba(10,18,48,.45)}
+.lp-photo img{width:100%;height:100%;object-fit:cover;display:block}

@@ -450,6 +450,12 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
 [dir=rtl] .foot h5{font-size:13px}
 .foot ul{list-style:none;display:grid;gap:8px}
 .foot a:hover{color:#fff}
+.hero-photo{position:absolute;top:56px;inset-inline-start:36px;width:calc(100% - 36px);height:calc(100% - 112px);object-fit:cover;border-radius:28px;box-shadow:0 30px 80px -30px rgba(10,18,48,.45)}
+.hero-art .hero-photo~svg{opacity:.18;-webkit-mask-image:linear-gradient(var(--fwd),#000,transparent 70%);mask-image:linear-gradient(var(--fwd),#000,transparent 70%)}
+.sec-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.26;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent);mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent)}
+.photo-band{margin:56px 0 0;border-radius:24px;overflow:hidden;aspect-ratio:1376/560;box-shadow:0 24px 70px -34px rgba(10,18,48,.4)}
+.photo-band img{width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:720px){.hero-photo{inset-inline-start:0;width:100%;top:24px;height:calc(100% - 48px)}.photo-band{aspect-ratio:4/3;margin-top:36px}}
 .disclaimer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line-n);font:400 11.5px/1.6 var(--f-mono);color:#6F7A9C}
 [dir=rtl] .disclaimer{font-size:13px;line-height:1.9}
 
@@ -552,6 +558,7 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
         </div>
       </div>
       <div class="hero-art" aria-hidden="true">
+        <img class="hero-photo" src="/photos/soc-analysts-1376.webp" srcset="/photos/soc-analysts-760.webp 760w, /photos/soc-analysts-1376.webp 1376w" sizes="(max-width:760px) 100vw, 1200px" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
         <svg id="heroLattice"></svg>
         <div class="fade"></div>
         <div class="console">
@@ -615,6 +622,7 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
         <div class="m" style="--c:var(--lime)"><div class="y">2030</div><h4 data-ar="رؤية 2030">Vision 2030</h4><p data-ar="قطاعٌ سيبراني سيادي بكفاءات سعودية يخدم سوقاً تضاعف حجمه.">A sovereign, Saudi-staffed cyber sector serving a doubled market.</p></div>
       </div>
     </div>
+    <figure class="photo-band rv"><img src="/photos/riyadh-skyline-1376.webp" srcset="/photos/riyadh-skyline-760.webp 760w, /photos/riyadh-skyline-1376.webp 1376w" sizes="(max-width:760px) 100vw, 1200px" width="1376" height="768" alt="Riyadh's skyline at dusk, the King Abdullah Financial District lit against the evening sky" data-alt-ar="أفق الرياض عند الغروب، ومركز الملك عبدالله المالي مضاءً في سماء المساء" loading="lazy" decoding="async"></figure>
   </div>
 </section>
 
@@ -640,6 +648,7 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
 <!-- ================= SOC LOOP ================= -->
 <section class="night" id="loop">
   <svg class="bg" id="bgLoop" aria-hidden="true"></svg>
+  <img class="sec-photo" src="/photos/data-hall-1376.webp" srcset="/photos/data-hall-760.webp 760w, /photos/data-hall-1376.webp 1376w" sizes="(max-width:760px) 100vw, 1200px" width="1376" height="768" alt="" loading="lazy" decoding="async">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="label" data-ar="03 · كيف نعمل">03 · How we operate</div>
@@ -682,6 +691,9 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
       <a href="/services/ecc-2-compliance/" data-ar="الامتثال للضوابط الأساسية ECC-2">ECC-2 compliance</a>
       <a href="/services/sama-csf/" data-ar="إطار البنك المركزي السعودي">SAMA Cyber Security Framework</a>
       <a href="/services/incident-response/" data-ar="الاستجابة للحوادث والأدلة الرقمية">Incident response &amp; forensics</a>
+      <a href="/services/penetration-testing/" data-ar="اختبار الاختراق والفريق الأحمر">Penetration testing &amp; red team</a>
+      <a href="/services/cloud-security/" data-ar="أمن السحابة وضوابط CCC-2">Cloud security &amp; CCC-2</a>
+      <a href="/services/ncnicc-compliance/" data-ar="الامتثال لضوابط NCNICC">NCNICC compliance</a>
     </nav>
   </div>
 </section>
@@ -830,6 +842,7 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
       <div data-ar="<span>ECC-2</span> · 67 من 108 ضوابط مُثبَتة هذا الشهر. 3 فجوات بمسؤولين محددين."><span>ECC-2</span> · 67 of 108 controls evidenced this month. 3 gaps, owners assigned.</div>
     </div>
     <p class="source rv" data-ar="الأمثلة التشغيلية توضيحية.">Operating examples are illustrative.</p>
+    <figure class="photo-band rv"><img src="/photos/lattice-light-1376.webp" srcset="/photos/lattice-light-760.webp 760w, /photos/lattice-light-1376.webp 1376w" sizes="(max-width:760px) 100vw, 1200px" width="1376" height="768" alt="Daylight falling through a geometric lattice screen onto a quiet operations room" data-alt-ar="ضوء النهار يعبر شبكة هندسية إلى غرفة عمليات هادئة" loading="lazy" decoding="async"></figure>
   </div>
 </section>
 
@@ -856,11 +869,13 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
       <div class="t rv"><div class="num">100%</div><p data-ar="سعوديون في وظائف الأمن السيبراني، كما يشترط الضابط 1-2-2 في ECC-2.">Saudi nationals in cybersecurity roles, as ECC-2 control 1-2-2 requires.</p></div>
     </div>
     <p class="source rv" data-ar="المصادر: الهيئة الوطنية للأمن السيبراني؛ CyberIC؛ الأكاديمية الوطنية للأمن السيبراني.">Sources: NCA; CyberIC; National Cybersecurity Academy.</p>
+    <figure class="photo-band rv"><img src="/photos/soc-fitout-1376.webp" srcset="/photos/soc-fitout-760.webp 760w, /photos/soc-fitout-1376.webp 1376w" sizes="(max-width:760px) 100vw, 1200px" width="1376" height="768" alt="A security operations centre being fitted out, with screens and analyst desks being installed" data-alt-ar="تجهيز مركز عمليات أمنية: تركيب الشاشات ومكاتب المحللين" loading="lazy" decoding="async"></figure>
   </div>
 </section>
 
 <!-- ================= CTA ================= -->
 <section class="cta night" id="contact">
+  <img class="sec-photo" src="/photos/infrastructure-1376.webp" srcset="/photos/infrastructure-760.webp 760w, /photos/infrastructure-1376.webp 1376w" sizes="(max-width:760px) 100vw, 1200px" width="1376" height="768" alt="" loading="lazy" decoding="async">
   <svg class="bg" id="ctaLattice" aria-hidden="true" style="opacity:.9"></svg>
   <div class="wrap">
     <div class="label" data-ar="أدخِل الضوء، واحجب الخطر.">Let the light in. Keep the threat out.</div>
@@ -882,10 +897,10 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
         <p style="max-width:380px" data-ar="سايبر هيكلة، إحدى شركات هيكلة، قيد التأسيس لتشغيل العمليات الأمنية لعملاء القطاع المالي والمنشآت والقطاع الخاص في المملكة العربية السعودية. الرياض · جدة.">Cyber HAYKALAH, a HAYKALAH company, is being established to run security operations for financial, enterprise and private-sector clients in Saudi Arabia. Riyadh · Jeddah.</p>
       </div>
       <div><h5 data-ar="استكشف">Explore</h5><ul><li><a href="#vision" data-ar="الرؤية الوطنية">National vision</a></li><li><a href="#services" data-ar="الخدمات">Services</a></li><li><a href="#dashboard" data-ar="لوحة العمليات">SOC dashboard</a></li><li><a href="#assessment" data-ar="النضج والتقييم">Maturity &amp; assessment</a></li></ul></div>
-      <div><h5 data-ar="الخدمات">Services</h5><ul><li><a href="/services/managed-soc-mdr/" data-ar="مركز العمليات المُدار">Managed SOC &amp; MDR</a></li><li><a href="/services/ecc-2-compliance/" data-ar="الامتثال لـ ECC-2">ECC-2 compliance</a></li><li><a href="/services/sama-csf/" data-ar="إطار البنك المركزي">SAMA CSF</a></li><li><a href="/services/incident-response/" data-ar="الاستجابة للحوادث">Incident response</a></li></ul></div>
+      <div><h5 data-ar="الخدمات">Services</h5><ul><li><a href="/services/managed-soc-mdr/" data-ar="مركز العمليات المُدار">Managed SOC &amp; MDR</a></li><li><a href="/services/ecc-2-compliance/" data-ar="الامتثال لـ ECC-2">ECC-2 compliance</a></li><li><a href="/services/sama-csf/" data-ar="إطار البنك المركزي">SAMA CSF</a></li><li><a href="/services/incident-response/" data-ar="الاستجابة للحوادث">Incident response</a></li><li><a href="/services/penetration-testing/" data-ar="اختبار الاختراق">Penetration testing</a></li><li><a href="/services/cloud-security/" data-ar="أمن السحابة">Cloud security</a></li><li><a href="/services/ncnicc-compliance/" data-ar="ضوابط NCNICC">NCNICC compliance</a></li></ul></div>
       <div><h5 data-ar="الشركة">Company</h5><ul><li><a href="#why" data-ar="لماذا سايبر هيكلة">Why Cyber HAYKALAH</a></li><li><a href="#roadmap" data-ar="خارطة الطريق">Roadmap</a></li><li><a href="mailto:cyber@haykalah.com" data-ar="تواصل معنا">Contact</a></li><li><a href="https://cybrhyk.com/">cybrhyk.com</a></li><li><a href="mailto:cyber@haykalah.com">cyber@haykalah.com</a></li><li data-ar="السجل التجاري لهيكلة 7014123751">HAYKALAH CR 7014123751</li></ul></div>
     </div>
-    <div class="disclaimer" data-ar="© 2026 سايبر هيكلة · cybrhyk.com · أرقام السوق والخطة استرشادية. بيانات اللوحة والتقييم توضيحية.">© 2026 Cyber HAYKALAH · cybrhyk.com · Market and plan figures are indicative. Dashboard and assessment data are illustrative.</div>
+    <div class="disclaimer" data-ar="© 2026 سايبر هيكلة · cybrhyk.com · أرقام السوق والخطة استرشادية. بيانات اللوحة والتقييم توضيحية. الصور توضيحية مولّدة بالذكاء الاصطناعي.">© 2026 Cyber HAYKALAH · cybrhyk.com · Market and plan figures are indicative. Dashboard and assessment data are illustrative. Photographs are AI-generated illustrations.</div>
   </div>
 </footer>
 

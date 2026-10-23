@@ -70,4 +70,46 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://cybrhyk.com/ar/services/incident-response/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cybrhyk.com/services/incident-response/"/>
   </url>
+  <url>
+    <loc>https://cybrhyk.com/services/penetration-testing/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cybrhyk.com/services/penetration-testing/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cybrhyk.com/ar/services/penetration-testing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cybrhyk.com/services/penetration-testing/"/>
+  </url>
+  <url>
+    <loc>https://cybrhyk.com/ar/services/penetration-testing/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cybrhyk.com/services/penetration-testing/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cybrhyk.com/ar/services/penetration-testing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cybrhyk.com/services/penetration-testing/"/>
+  </url>
+  <url>
+    <loc>https://cybrhyk.com/services/cloud-security/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cybrhyk.com/services/cloud-security/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cybrhyk.com/ar/services/cloud-security/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cybrhyk.com/services/cloud-security/"/>
+  </url>
+  <url>
+    <loc>https://cybrhyk.com/ar/services/cloud-security/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cybrhyk.com/services/cloud-security/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cybrhyk.com/ar/services/cloud-security/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cybrhyk.com/services/cloud-security/"/>
+  </url>
+  <url>
+    <loc>https://cybrhyk.com/services/ncnicc-compliance/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cybrhyk.com/services/ncnicc-compliance/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cybrhyk.com/ar/services/ncnicc-compliance/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cybrhyk.com/services/ncnicc-compliance/"/>
+  </url>
+  <url>
+    <loc>https://cybrhyk.com/ar/services/ncnicc-compliance/</loc>
+    <lastmod>2026-10-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://cybrhyk.com/services/ncnicc-compliance/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://cybrhyk.com/ar/services/ncnicc-compliance/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://cybrhyk.com/services/ncnicc-compliance/"/>
+  </url>
 </urlset>

@@ -13,6 +13,12 @@
 - [إطار البنك المركزي السعودي](https://cybrhyk.com/ar/services/sama-csf/)
 - [Incident response & forensics](https://cybrhyk.com/services/incident-response/): On-call incident response and digital forensics in Saudi Arabia: containment, root cause, evidence preservation and regulator-ready reports. Retainer or call-out.
 - [الاستجابة للحوادث والأدلة الرقمية](https://cybrhyk.com/ar/services/incident-response/)
+- [Penetration testing & red team](https://cybrhyk.com/services/penetration-testing/): Infrastructure, web, mobile and cloud penetration testing and red teaming in Saudi Arabia, with findings mapped to NCA ECC-2 and SAMA CSF and verified by re-test.
+- [اختبار الاختراق والفريق الأحمر](https://cybrhyk.com/ar/services/penetration-testing/)
+- [Cloud security & CCC-2](https://cybrhyk.com/services/cloud-security/): Secure your cloud in Saudi Arabia: architecture review, posture management and NCA Cloud Cybersecurity Controls (CCC-2:2024) compliance, with data kept in the Kingdom.
+- [أمن السحابة وضوابط CCC-2](https://cybrhyk.com/ar/services/cloud-security/)
+- [NCNICC compliance](https://cybrhyk.com/services/ncnicc-compliance/): Meet the NCA's Non-CNI private-sector controls (NCNICC-1:2025): scoping, gap assessment, remediation and evidence for Category A and Category B companies in Saudi Arabia.
+- [الامتثال لضوابط NCNICC](https://cybrhyk.com/ar/services/ncnicc-compliance/)
 
 ## Notes
 - Market and plan figures on the site are indicative; dashboard and assessment data are illustrative.

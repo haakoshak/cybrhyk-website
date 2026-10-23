@@ -312,6 +312,237 @@ export const PAGES = [
       ]
     },
     related: ["managed-soc-mdr", "ecc-2-compliance", "sama-csf"]
+  },
+  {
+    slug: "penetration-testing",
+    color: "#8B5CFF",
+    en: {
+      nav: "Penetration testing & red team",
+      title: "Penetration Testing in Saudi Arabia | Cyber HAYKALAH",
+      desc: "Infrastructure, web, mobile and cloud penetration testing and red teaming in Saudi Arabia, with findings mapped to NCA ECC-2 and SAMA CSF and verified by re-test.",
+      serviceType: "Penetration testing and red teaming",
+      kicker: "Penetration testing · Red team · Saudi Arabia",
+      h1: "Penetration testing that shows how an attacker would get in",
+      lead: "Infrastructure, application, cloud and adversary-emulation testing by Saudi specialists. Every finding is rated by risk, mapped to the controls you are assessed against, and closed with a re-test.",
+      facts: [["Re-test", "included, so every fix is verified"], ["ATT&CK", "red-team scenarios mapped to MITRE ATT&CK"], ["in-KSA", "testers and test data stay in the Kingdom"]],
+      cardsTitle: "What we test",
+      cards: [
+        ["External and internal networks", "Internet-facing systems, internal segments, Active Directory and the paths an attacker would take between them."],
+        ["Web and mobile applications", "Authentication, access control, business logic and APIs, tested against the OWASP categories and your own risk scenarios."],
+        ["Cloud configuration", "Identity, storage, network and logging settings in your cloud tenancy, checked against CCC-2:2024."],
+        ["Red teaming", "Goal-based adversary emulation over weeks, testing whether your people, processes and monitoring notice and respond."],
+        ["Social engineering", "Phishing and pretexting simulations, agreed in advance and reported without naming individuals."],
+        ["Reporting and re-test", "An executive summary, technical findings with clear fixes, and a re-test once you have remediated."]
+      ],
+      stepsTitle: "How an engagement runs",
+      steps: [
+        ["Scope", "Targets, rules of engagement and testing windows agreed in writing."],
+        ["Discover", "Map the attack surface: hosts, services, applications, identities."],
+        ["Test", "Manual testing supported by tooling, focused on what is exploitable."],
+        ["Validate", "Confirm impact safely and remove false positives."],
+        ["Report", "Findings rated by risk and mapped to your controls."],
+        ["Re-test", "Verify the fixes and issue a re-test letter."]
+      ],
+      fwTitle: "What it helps you evidence",
+      fw: [["ECC-2:2024", "Penetration testing and vulnerability management controls"], ["SAMA CSF", "Security testing for regulated financial institutions"], ["CCC-2:2024", "Cloud configuration and tenant controls"], ["NCNICC-1:2025", "Testing obligations for private companies"]],
+      faq: [
+        ["How often should we run a penetration test?", "At least once a year and after significant changes to systems or applications. Organisations with critical systems usually test them more often, and the national frameworks expect testing to be regular."],
+        ["What is the difference between a penetration test and red teaming?", "A penetration test finds as many weaknesses as possible in a defined scope. Red teaming pursues a specific goal, such as reaching sensitive data, the way a real attacker would, to test whether your detection and response work."],
+        ["Will testing disrupt our systems?", "Testing is scoped and scheduled with you, higher-risk techniques are agreed in advance, and production systems are tested within agreed windows. You can pause testing at any time."],
+        ["What do we receive at the end?", "An executive summary, a technical report with each finding rated by risk and mapped to the relevant controls, remediation guidance, and a re-test letter once fixes are verified."]
+      ]
+    },
+    ar: {
+      nav: "اختبار الاختراق والفريق الأحمر",
+      title: "اختبار الاختراق في السعودية | سايبر هيكلة",
+      desc: "اختبار اختراق للبنية التحتية والتطبيقات والسحابة وتمارين الفريق الأحمر في المملكة، مع ربط النتائج بـ ECC-2 وإطار البنك المركزي والتحقق منها بإعادة الاختبار.",
+      serviceType: "اختبار الاختراق والفريق الأحمر",
+      kicker: "اختبار الاختراق · الفريق الأحمر · المملكة العربية السعودية",
+      h1: "اختبار اختراق يُريك كيف سيدخل المهاجم",
+      lead: "اختبارات للبنية التحتية والتطبيقات والسحابة ومحاكاة الخصوم، ينفّذها مختصون سعوديون. تُصنَّف كل نتيجة بحسب خطورتها، وتُربط بالضوابط التي تُقيَّم عليها، وتُغلق بإعادة اختبار.",
+      facts: [["إعادة اختبار", "مشمولة، للتحقق من كل إصلاح"], ["ATT&CK", "سيناريوهات الفريق الأحمر مرتبطة بإطار MITRE ATT&CK"], ["محلياً", "المختبِرون وبيانات الاختبار داخل المملكة"]],
+      cardsTitle: "ما الذي نختبره",
+      cards: [
+        ["الشبكات الخارجية والداخلية", "الأنظمة المكشوفة على الإنترنت، والأجزاء الداخلية، وخدمة الدليل النشط، والمسارات التي قد يسلكها المهاجم بينها."],
+        ["تطبيقات الويب والجوال", "المصادقة، والتحكم في الوصول، ومنطق الأعمال، وواجهات البرمجة، وفق فئات OWASP وسيناريوهات المخاطر الخاصة بك."],
+        ["إعدادات السحابة", "إعدادات الهويات والتخزين والشبكة والسجلات في بيئتك السحابية، مقارنةً بضوابط CCC-2:2024."],
+        ["الفريق الأحمر", "محاكاة خصوم موجّهة بهدف تمتد لأسابيع، تختبر هل يلاحظ فريقك وإجراءاتك ومراقبتك الهجوم ويستجيبون له."],
+        ["الهندسة الاجتماعية", "محاكاة التصيّد والانتحال، متفق عليها مسبقاً، وتُقدَّم نتائجها دون تسمية أفراد."],
+        ["التقارير وإعادة الاختبار", "ملخص تنفيذي، ونتائج تقنية بإصلاحات واضحة، وإعادة اختبار بعد المعالجة."]
+      ],
+      stepsTitle: "كيف يسير الاختبار",
+      steps: [
+        ["النطاق", "الأهداف وقواعد الاشتباك ونوافذ الاختبار متفق عليها كتابياً."],
+        ["الاستكشاف", "رسم سطح الهجوم: الأجهزة والخدمات والتطبيقات والهويات."],
+        ["الاختبار", "اختبار يدوي تدعمه الأدوات، يركّز على ما يمكن استغلاله فعلاً."],
+        ["التحقق", "تأكيد الأثر بأمان واستبعاد النتائج الخاطئة."],
+        ["التقرير", "نتائج مصنّفة بحسب الخطورة ومرتبطة بضوابطك."],
+        ["إعادة الاختبار", "التحقق من الإصلاحات وإصدار خطاب إعادة الاختبار."]
+      ],
+      fwTitle: "ما الذي يساعدك على إثباته",
+      fw: [["ECC-2:2024", "ضوابط اختبار الاختراق وإدارة الثغرات"], ["SAMA CSF", "الاختبارات الأمنية للمؤسسات المالية الخاضعة للتنظيم"], ["CCC-2:2024", "ضوابط إعدادات السحابة والمستأجرين"], ["NCNICC-1:2025", "متطلبات الاختبار للشركات الخاصة"]],
+      faq: [
+        ["كم مرة يجب إجراء اختبار الاختراق؟", "مرة واحدة في السنة على الأقل، وبعد أي تغيير جوهري في الأنظمة أو التطبيقات. وتختبر الجهات ذات الأنظمة الحساسة أنظمتها عادةً بوتيرة أعلى، وتتوقع الأطر الوطنية أن يكون الاختبار دورياً."],
+        ["ما الفرق بين اختبار الاختراق والفريق الأحمر؟", "يسعى اختبار الاختراق إلى إيجاد أكبر عدد من الثغرات ضمن نطاق محدد. أما الفريق الأحمر فيسعى إلى هدف معيّن، مثل الوصول إلى بيانات حساسة، كما يفعل المهاجم الحقيقي، لاختبار فاعلية الرصد والاستجابة لديك."],
+        ["هل يعطّل الاختبار أنظمتنا؟", "يُحدَّد نطاق الاختبار وموعده معك، وتُعتمد الأساليب الأعلى خطورة مسبقاً، وتُختبر أنظمة الإنتاج ضمن نوافذ متفق عليها. ويمكنك إيقاف الاختبار مؤقتاً في أي وقت."],
+        ["ماذا نستلم في النهاية؟", "ملخصاً تنفيذياً، وتقريراً تقنياً يصنّف كل نتيجة بحسب خطورتها ويربطها بالضوابط ذات الصلة، وإرشادات للمعالجة، وخطاب إعادة اختبار بعد التحقق من الإصلاحات."]
+      ]
+    },
+    related: ["cloud-security", "managed-soc-mdr", "ecc-2-compliance"]
+  },
+  {
+    slug: "cloud-security",
+    color: "#FF8A3D",
+    en: {
+      nav: "Cloud security & CCC-2",
+      title: "Cloud Security & NCA CCC-2 Compliance | Cyber HAYKALAH",
+      desc: "Secure your cloud in Saudi Arabia: architecture review, posture management and NCA Cloud Cybersecurity Controls (CCC-2:2024) compliance, with data kept in the Kingdom.",
+      serviceType: "Cloud security and NCA Cloud Cybersecurity Controls compliance",
+      kicker: "Cloud security · CCC-2:2024 · NDMO",
+      h1: "Cloud security, built to the Kingdom's cloud controls",
+      lead: "Architecture reviews, continuous posture management and application security for workloads in Saudi cloud regions, aligned to the NCA's Cloud Cybersecurity Controls and NDMO data rules.",
+      facts: [["CCC-2", "the NCA's Cloud Cybersecurity Controls, 2024 edition"], ["18", "main controls for cloud tenants"], ["4", "data classification levels to design around"]],
+      cardsTitle: "What you get",
+      cards: [
+        ["Architecture review", "Your cloud design checked for identity, network segmentation, encryption and logging before problems reach production."],
+        ["Posture management", "Continuous checks for misconfigurations across accounts and subscriptions, with fixes prioritised by risk."],
+        ["Identity and access", "Least-privilege roles, strong authentication and regular access reviews for people and workloads."],
+        ["Data residency", "Data mapped to its classification level and kept where NDMO policy requires it to be."],
+        ["Application security", "Secure code review and security built into your delivery pipeline, so fixes happen before release."],
+        ["Cloud monitoring", "Cloud logs and alerts fed into our 24/7 managed SOC, alongside the rest of your estate."]
+      ],
+      stepsTitle: "How we secure your cloud",
+      steps: [
+        ["Discover", "Inventory accounts, workloads, identities and data."],
+        ["Assess", "Check configuration against CCC-2 and good practice."],
+        ["Prioritise", "Rank issues by risk and by effort."],
+        ["Harden", "Fix configuration, identity and network gaps."],
+        ["Monitor", "Watch for drift and threats around the clock."],
+        ["Evidence", "Keep proof ready for your next assessment."]
+      ],
+      fwTitle: "What it helps you evidence",
+      fw: [["CCC-2:2024", "Cloud Cybersecurity Controls for providers and tenants"], ["ECC-2:2024", "Essential Cybersecurity Controls, including third-party and cloud"], ["NDMO", "National data management and residency policy"], ["PDPL", "Personal Data Protection Law and its transfer rules"]],
+      faq: [
+        ["What is CCC-2:2024?", "The NCA's Cloud Cybersecurity Controls, second edition. They apply to cloud service providers and to government and critical-infrastructure organisations that use cloud, with 37 main controls for providers and 18 for tenants."],
+        ["Does our data have to stay in Saudi Arabia?", "Data residency is governed by NDMO policy and depends on how your data is classified. We map your data to the classification levels and design the architecture to match."],
+        ["Which cloud platforms do you cover?", "The major public cloud platforms, including their Saudi regions, as well as private and hybrid cloud environments."],
+        ["Is cloud monitoring part of the managed SOC?", "It can be. Cloud logs and alerts feed our managed detection and response, so cloud incidents are watched 24/7 alongside the rest of your estate."]
+      ]
+    },
+    ar: {
+      nav: "أمن السحابة وضوابط CCC-2",
+      title: "أمن السحابة والامتثال لضوابط CCC-2 | سايبر هيكلة",
+      desc: "أمّن بيئتك السحابية في المملكة: مراجعة المعمارية، وإدارة الوضع الأمني، والامتثال لضوابط الأمن السيبراني للحوسبة السحابية CCC-2:2024، مع بقاء البيانات داخل المملكة.",
+      serviceType: "أمن السحابة والامتثال لضوابط الأمن السيبراني للحوسبة السحابية",
+      kicker: "أمن السحابة · CCC-2:2024 · مكتب إدارة البيانات الوطنية",
+      h1: "أمن السحابة، وفق ضوابط المملكة للحوسبة السحابية",
+      lead: "مراجعات للمعمارية، وإدارة مستمرة للوضع الأمني، وأمن للتطبيقات لأحمالك في المناطق السحابية داخل المملكة، بما يتوافق مع ضوابط الهيئة للحوسبة السحابية وقواعد مكتب إدارة البيانات الوطنية.",
+      facts: [["CCC-2", "ضوابط الأمن السيبراني للحوسبة السحابية، إصدار 2024"], ["18", "ضابطاً رئيساً للمستأجرين"], ["4", "مستويات تصنيف للبيانات تُبنى عليها المعمارية"]],
+      cardsTitle: "ما الذي تحصل عليه",
+      cards: [
+        ["مراجعة المعمارية", "فحص تصميمك السحابي من حيث الهويات وتقسيم الشبكة والتشفير والسجلات، قبل أن تصل المشكلات إلى بيئة الإنتاج."],
+        ["إدارة الوضع الأمني", "فحوص مستمرة لأخطاء الإعداد عبر الحسابات والاشتراكات، مع ترتيب الإصلاحات بحسب الخطورة."],
+        ["الهويات والوصول", "أدوار بأقل الصلاحيات، ومصادقة قوية، ومراجعات دورية للوصول للأشخاص والأحمال."],
+        ["إقامة البيانات", "ربط البيانات بمستوى تصنيفها وحفظها حيث تشترط سياسات مكتب إدارة البيانات الوطنية."],
+        ["أمن التطبيقات", "مراجعة آمنة للشيفرة، وأمن مدمج في مسار التطوير، لتُعالج الثغرات قبل الإطلاق."],
+        ["مراقبة السحابة", "تغذية سجلات السحابة وتنبيهاتها إلى مركز عملياتنا المُدار على مدار الساعة، مع بقية بيئتك."]
+      ],
+      stepsTitle: "كيف نؤمّن سحابتك",
+      steps: [
+        ["الاستكشاف", "حصر الحسابات والأحمال والهويات والبيانات."],
+        ["التقييم", "فحص الإعدادات مقابل CCC-2 وأفضل الممارسات."],
+        ["الأولويات", "ترتيب المشكلات بحسب الخطورة والجهد."],
+        ["التحصين", "معالجة فجوات الإعداد والهويات والشبكة."],
+        ["المراقبة", "رصد الانحرافات والتهديدات على مدار الساعة."],
+        ["الأدلة", "إبقاء الإثباتات جاهزة لتقييمك القادم."]
+      ],
+      fwTitle: "ما الذي يساعدك على إثباته",
+      fw: [["CCC-2:2024", "ضوابط الأمن السيبراني للحوسبة السحابية للمزوّدين والمستأجرين"], ["ECC-2:2024", "الضوابط الأساسية، بما فيها الأطراف الخارجية والسحابة"], ["NDMO", "سياسات إدارة البيانات الوطنية وإقامتها"], ["PDPL", "نظام حماية البيانات الشخصية ولوائح نقلها"]],
+      faq: [
+        ["ما هي ضوابط CCC-2:2024؟", "هي الإصدار الثاني من ضوابط الأمن السيبراني للحوسبة السحابية الصادرة عن الهيئة. وتنطبق على مزوّدي الخدمات السحابية وعلى الجهات الحكومية والبنى الحساسة التي تستخدم السحابة، وتضم 37 ضابطاً رئيساً للمزوّدين و18 للمستأجرين."],
+        ["هل يجب أن تبقى بياناتنا داخل المملكة؟", "تحكم سياسات مكتب إدارة البيانات الوطنية إقامة البيانات، وتعتمد على تصنيف بياناتك. ونربط بياناتك بمستويات التصنيف ونصمم المعمارية بما يتوافق معها."],
+        ["ما المنصات السحابية التي تغطونها؟", "المنصات السحابية العامة الرئيسة، بما فيها مناطقها داخل المملكة، إضافةً إلى البيئات السحابية الخاصة والهجينة."],
+        ["هل مراقبة السحابة جزء من مركز العمليات المُدار؟", "يمكن أن تكون كذلك. إذ تُغذّى سجلات السحابة وتنبيهاتها إلى خدمة الرصد والاستجابة المُدارة، فتُراقب حوادث السحابة على مدار الساعة مع بقية بيئتك."]
+      ]
+    },
+    related: ["managed-soc-mdr", "penetration-testing", "ecc-2-compliance"]
+  },
+  {
+    slug: "ncnicc-compliance",
+    color: "#C6F432",
+    en: {
+      nav: "NCNICC compliance",
+      title: "NCNICC-1:2025 Compliance for Companies | Cyber HAYKALAH",
+      desc: "Meet the NCA's Non-CNI private-sector controls (NCNICC-1:2025): scoping, gap assessment, remediation and evidence for Category A and Category B companies in Saudi Arabia.",
+      serviceType: "NCA Non-CNI private-sector cybersecurity controls (NCNICC-1:2025) compliance",
+      kicker: "NCA · Private-sector controls · Category A and B",
+      h1: "NCNICC-1:2025: cybersecurity controls for private companies, made practical",
+      lead: "NCNICC-1:2025 brings private companies outside critical infrastructure under mandatory NCA controls for the first time: 65 controls for Category A companies and 26 for Category B. We help you confirm where you fall, close the gaps and keep the evidence ready.",
+      facts: [["65", "controls for Category A: above 250 staff or SAR 200m revenue"], ["26", "controls for Category B: 6 to 249 staff"], ["First", "set of NCA controls written for non-CNI companies"]],
+      cardsTitle: "What you get",
+      cards: [
+        ["Category check", "Confirm whether you are Category A, Category B or out of scope, and which controls apply."],
+        ["Gap assessment", "Every applicable control rated against your current state, with owners and priorities."],
+        ["Right-sized remediation", "A plan sized to a private company: the controls that matter most first, without enterprise overhead."],
+        ["Policies and procedures", "The governance documents the controls expect, written for your company and approved by your leadership."],
+        ["Monitoring option", "Our 24/7 managed SOC covers the monitoring and incident controls without hiring an in-house team."],
+        ["Evidence pack", "Proof for each control, organised and kept current for when you need to show it."]
+      ],
+      stepsTitle: "How we take you through it",
+      steps: [
+        ["Classify", "Confirm your category and the controls in scope."],
+        ["Assess", "Rate each control against evidence."],
+        ["Plan", "Sequence the gaps by risk and effort."],
+        ["Remediate", "Close gaps with policy and technical work."],
+        ["Monitor", "Keep watch with managed detection if you need it."],
+        ["Evidence", "Organise proof and keep it current."]
+      ],
+      fwTitle: "Related frameworks",
+      fw: [["NCNICC-1:2025", "Controls for non-CNI private-sector companies"], ["ECC-2:2024", "Essential Cybersecurity Controls, for government and CNI"], ["PDPL", "Personal Data Protection Law"], ["SAMA CSF", "For companies regulated by the Saudi Central Bank"]],
+      faq: [
+        ["What is NCNICC-1:2025?", "It is the NCA's set of cybersecurity controls for private-sector companies that are not critical national infrastructure. It is the first time these companies have been brought under mandatory NCA controls."],
+        ["Is my company Category A or Category B?", "Category A covers companies with more than 250 employees or more than SAR 200 million in revenue. Category B covers companies with 6 to 249 employees or SAR 3 million to 200 million in revenue. Micro-enterprises are out of scope. Always confirm against the NCA's official text."],
+        ["How is NCNICC different from ECC-2?", "ECC-2 applies to government entities and to organisations that own, operate or host critical infrastructure. NCNICC is a separate, smaller set written for other private companies."],
+        ["Can a small team meet NCNICC?", "Yes. A gap assessment shows what applies to you, and managed services such as a 24/7 SOC and a governance retainer can cover the controls without building an in-house team."]
+      ]
+    },
+    ar: {
+      nav: "الامتثال لضوابط NCNICC",
+      title: "الامتثال لضوابط NCNICC-1:2025 للشركات | سايبر هيكلة",
+      desc: "التزم بضوابط الهيئة لشركات القطاع الخاص غير الحساسة NCNICC-1:2025: تحديد النطاق، وتقييم الفجوات، والمعالجة، والأدلة لشركات الفئة أ والفئة ب في المملكة.",
+      serviceType: "الامتثال لضوابط الأمن السيبراني لشركات القطاع الخاص غير الحساسة NCNICC-1:2025",
+      kicker: "الهيئة الوطنية للأمن السيبراني · ضوابط القطاع الخاص · الفئتان أ وب",
+      h1: "ضوابط NCNICC-1:2025 للشركات الخاصة، بخطوات عملية",
+      lead: "تُخضع ضوابط NCNICC-1:2025 الشركات الخاصة غير المصنّفة بنيةً حساسة لضوابط الهيئة الإلزامية لأول مرة: 65 ضابطاً لشركات الفئة أ و26 لشركات الفئة ب. نساعدك على تأكيد فئتك، وإغلاق الفجوات، وإبقاء الأدلة جاهزة.",
+      facts: [["65", "ضابطاً للفئة أ: أكثر من 250 موظفاً أو 200 مليون ريال إيرادات"], ["26", "ضابطاً للفئة ب: من 6 إلى 249 موظفاً"], ["الأولى", "مجموعة ضوابط من الهيئة مكتوبة للشركات غير الحساسة"]],
+      cardsTitle: "ما الذي تحصل عليه",
+      cards: [
+        ["تحديد الفئة", "تأكيد هل شركتك من الفئة أ أو الفئة ب أو خارج النطاق، وأي الضوابط تنطبق عليها."],
+        ["تقييم الفجوات", "تقييم كل ضابط منطبق مقابل وضعك الحالي، مع تحديد المسؤولين والأولويات."],
+        ["معالجة بحجم مناسب", "خطة تناسب شركة خاصة: الضوابط الأهم أولاً، دون أعباء الشركات الكبرى."],
+        ["السياسات والإجراءات", "وثائق الحوكمة التي تتطلبها الضوابط، مكتوبة لشركتك ومعتمدة من قيادتها."],
+        ["خيار المراقبة", "يغطي مركز عملياتنا المُدار على مدار الساعة ضوابط المراقبة والحوادث دون توظيف فريق داخلي."],
+        ["حزمة الأدلة", "إثبات لكل ضابط، منظّم ومحدّث لحين الحاجة إلى عرضه."]
+      ],
+      stepsTitle: "كيف نرافقك في الرحلة",
+      steps: [
+        ["التصنيف", "تأكيد فئتك والضوابط المشمولة."],
+        ["التقييم", "تقييم كل ضابط بالأدلة."],
+        ["التخطيط", "ترتيب الفجوات بحسب الخطورة والجهد."],
+        ["المعالجة", "إغلاق الفجوات بأعمال السياسات والتقنية."],
+        ["المراقبة", "متابعة مستمرة برصد مُدار عند الحاجة."],
+        ["الأدلة", "تنظيم الإثباتات وإبقاؤها محدّثة."]
+      ],
+      fwTitle: "أطر مرتبطة",
+      fw: [["NCNICC-1:2025", "ضوابط شركات القطاع الخاص غير المصنّفة بنيةً حساسة"], ["ECC-2:2024", "الضوابط الأساسية للحكومة والبنى الحساسة"], ["PDPL", "نظام حماية البيانات الشخصية"], ["SAMA CSF", "للشركات الخاضعة لتنظيم البنك المركزي السعودي"]],
+      faq: [
+        ["ما هي ضوابط NCNICC-1:2025؟", "هي مجموعة ضوابط الأمن السيبراني التي أصدرتها الهيئة لشركات القطاع الخاص غير المصنّفة بنيةً تحتية وطنية حساسة، وهي المرة الأولى التي تُخضع فيها هذه الشركات لضوابط الهيئة الإلزامية."],
+        ["هل شركتي من الفئة أ أم الفئة ب؟", "تشمل الفئة أ الشركات التي يزيد عدد موظفيها على 250 أو تتجاوز إيراداتها 200 مليون ريال، وتشمل الفئة ب الشركات التي لديها من 6 إلى 249 موظفاً أو إيرادات بين 3 ملايين و200 مليون ريال. والمنشآت متناهية الصغر خارج النطاق. ويجب التأكد دائماً من النص الرسمي للهيئة."],
+        ["ما الفرق بين NCNICC وECC-2؟", "تنطبق ECC-2 على الجهات الحكومية وعلى الجهات التي تملك بنى تحتية حساسة أو تشغّلها أو تستضيفها. أما NCNICC فمجموعة مستقلة وأصغر مكتوبة لبقية الشركات الخاصة."],
+        ["هل يستطيع فريق صغير الالتزام بـ NCNICC؟", "نعم. يُظهر تقييم الفجوات ما ينطبق عليك، ويمكن لخدمات مُدارة مثل مركز العمليات على مدار الساعة وعقد الحوكمة تغطية الضوابط دون بناء فريق داخلي."]
+      ]
+    },
+    related: ["ecc-2-compliance", "managed-soc-mdr", "penetration-testing"]
   }
 ];
 

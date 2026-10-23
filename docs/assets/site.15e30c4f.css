@@ -438,6 +438,12 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
 [dir=rtl] .foot h5{font-size:13px}
 .foot ul{list-style:none;display:grid;gap:8px}
 .foot a:hover{color:#fff}
+.hero-photo{position:absolute;top:56px;inset-inline-start:36px;width:calc(100% - 36px);height:calc(100% - 112px);object-fit:cover;border-radius:28px;box-shadow:0 30px 80px -30px rgba(10,18,48,.45)}
+.hero-art .hero-photo~svg{opacity:.18;-webkit-mask-image:linear-gradient(var(--fwd),#000,transparent 70%);mask-image:linear-gradient(var(--fwd),#000,transparent 70%)}
+.sec-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.26;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent);mask-image:linear-gradient(180deg,transparent,#000 22%,#000 78%,transparent)}
+.photo-band{margin:56px 0 0;border-radius:24px;overflow:hidden;aspect-ratio:1376/560;box-shadow:0 24px 70px -34px rgba(10,18,48,.4)}
+.photo-band img{width:100%;height:100%;object-fit:cover;display:block}
+@media (max-width:720px){.hero-photo{inset-inline-start:0;width:100%;top:24px;height:calc(100% - 48px)}.photo-band{aspect-ratio:4/3;margin-top:36px}}
 .disclaimer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line-n);font:400 11.5px/1.6 var(--f-mono);color:#6F7A9C}
 [dir=rtl] .disclaimer{font-size:13px;line-height:1.9}
 
@@ -642,3 +648,7 @@ html.cards footer{position:relative;z-index:40}
 .lp-related span{font-size:14px;color:var(--t-blue)}
 @media (max-width:1024px){.lp-hero .grid{grid-template-columns:1fr}.lp-cards,.lp-related{grid-template-columns:1fr 1fr}.lp-steps{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:720px){.lp-cards,.lp-related,.lp-fw{grid-template-columns:1fr}.lp-steps{grid-template-columns:1fr 1fr}.lp-fw div{grid-template-columns:1fr;gap:6px}}
+
+.lp-side{display:grid;gap:16px}
+.lp-photo{margin:0;border-radius:22px;overflow:hidden;aspect-ratio:16/9;box-shadow:0 24px 60px -30px rgba(10,18,48,.45)}
+.lp-photo img{width:100%;height:100%;object-fit:cover;display:block}

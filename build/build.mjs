@@ -47,6 +47,8 @@ fs.rmSync(path.join(OUT, "assets"), { recursive: true, force: true });
 write(`assets/${A.css}`, css);
 write(`assets/${A.home}`, homeJs);
 write(`assets/${A.motion}`, motionJs);
+fs.rmSync(path.join(OUT, "photos"), { recursive: true, force: true });
+for (const f of fs.readdirSync(path.join(SRC, "photos", "web"))) write(`photos/${f}`, fs.readFileSync(path.join(SRC, "photos", "web", f)));
 for (const f of ["favicon.ico", "icon.svg", "apple-touch-icon.png", "icon-192.png", "icon-512.png", "logo-1024.png"]) write(`assets/${f}`, fs.readFileSync(path.join(SRC, "brand", f)));
 
 /* ---------------- head ---------------- */
@@ -114,6 +116,8 @@ try {
     h = h.replace(/<script>\n\(function\(\)\{[\s\S]*?\n\}\)\(\);\n<\/script>\s*<script src="motion.js"><\/script>/, `<script src="/assets/${A.home}" defer></script>\n<script src="/assets/${A.motion}" defer></script>`);
     if (h.includes("<style>") || h.includes('src="motion.js"')) throw new Error(`asset extraction failed (${lang})`);
     h = h.replace(new RegExp(`(<svg[^>]*\\bid="(?:${BG_IDS.join("|")})"[^>]*>)[\\s\\S]*?(<\\/svg>)`, "g"), "$1$2");
+    if (lang === "ar") h = h.replace(/\salt="[^"]*"(\s[^>]*?)?\sdata-alt-ar="([^"]*)"/g, (m, mid, ar) => ` alt="${ar}"${mid || ""}`);
+    h = h.replace(/\sdata-alt-ar="[^"]*"/g, "");
     h = h.replace(/\sdata-(?:ar|en)="[^"]*"/g, "");
     h = h.replace(/<button class="lang" id="langBtn"([^>]*)>([\s\S]*?)<\/button>/, (m, attrs, inner) => `<a class="lang" id="langBtn" href="${homePath(other(lang))}" hreflang="${other(lang)}"${attrs}>${inner}</a>`);
     if (lang === "ar") h = h.replace(/href="\/services\//g, 'href="/ar/services/');
@@ -132,6 +136,17 @@ try {
 }
 
 /* ---------------- landing pages ---------------- */
+// AI-generated hero photo per service page: [file, alt en, alt ar]
+const PHOTO = {
+  "managed-soc-mdr": ["night-analyst", "A security analyst monitoring live alerts across several screens during a night shift", "محلل أمني يراقب التنبيهات المباشرة على عدة شاشات في نوبة ليلية"],
+  "ecc-2-compliance": ["compliance-review", "Two compliance specialists reviewing control evidence together at a meeting table", "مختصّا امتثال يراجعان أدلة الضوابط معاً على طاولة اجتماعات"],
+  "sama-csf": ["bank-hq", "The glass headquarters of a Saudi bank in Riyadh's financial district", "المقر الزجاجي لبنك سعودي في الحي المالي بالرياض"],
+  "incident-response": ["ir-war-room", "An incident response team coordinating in a war room around a shared timeline", "فريق استجابة للحوادث ينسّق في غرفة عمليات حول جدول زمني مشترك"],
+  "penetration-testing": ["soc-analysts", "Security specialists working through findings at their workstations", "مختصون أمنيون يعملون على النتائج في محطات عملهم"],
+  "cloud-security": ["data-hall", "Rows of server racks in an in-Kingdom data hall", "صفوف من خزائن الخوادم في قاعة بيانات داخل المملكة"],
+  "ncnicc-compliance": ["compliance-review", "Specialists reviewing critical infrastructure control evidence", "مختصون يراجعون أدلة ضوابط البنية التحتية الحساسة"]
+};
+const lpPhoto = (slug, lang) => { const [f, en, ar] = PHOTO[slug]; return `<figure class="lp-photo"><img src="/photos/${f}-1376.webp" srcset="/photos/${f}-760.webp 760w, /photos/${f}-1376.webp 1376w" sizes="(max-width:1024px) 100vw, 560px" width="1376" height="768" alt="${esc(lang === "ar" ? ar : en)}" fetchpriority="high" decoding="async"></figure>`; };
 // Static vector backgrounds (no runtime script needed on these pages).
 function circuitSvg(seed, color) {
   let s = seed; const r = () => { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646 };
@@ -202,8 +217,11 @@ ${nav}
           <a class="btn ghost" href="${homePath(lang)}">${u.back}</a>
         </div>
       </div>
-      <div class="lp-facts rv">
+      <div class="lp-side rv">
+        ${lpPhoto(page.slug, lang)}
+      <div class="lp-facts">
         ${t.facts.map(([n, p], i) => `<div class="lp-fact" style="--c:${STAGES[(i + 1) % 6]}"><span class="n">${esc(n)}</span><p>${esc(p)}</p></div>`).join("\n        ")}
+      </div>
       </div>
     </div>
   </div>
