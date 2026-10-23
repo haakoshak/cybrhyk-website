@@ -68,6 +68,7 @@ function head({ lang, title, desc, enPath, arPath, ogTitle, ogDesc, graph }) {
 <link rel="alternate" hreflang="ar" href="${SITE + arPath}">
 <link rel="alternate" hreflang="x-default" href="${SITE + enPath}">
 <meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="msvalidate.01" content="3F4AE95AB422BA13A6A015BC8DAB6C1B">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${lang === "ar" ? "سايبر هيكلة" : "Cyber HAYKALAH"}">
 <meta property="og:url" content="${self}">
