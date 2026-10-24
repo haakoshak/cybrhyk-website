@@ -142,9 +142,9 @@ const PHOTO = {
   "ecc-2-compliance": ["compliance-review", "Two compliance specialists reviewing control evidence together at a meeting table", "مختصّا امتثال يراجعان أدلة الضوابط معاً على طاولة اجتماعات"],
   "sama-csf": ["bank-hq", "The glass headquarters of a Saudi bank in Riyadh's financial district", "المقر الزجاجي لبنك سعودي في الحي المالي بالرياض"],
   "incident-response": ["ir-war-room", "An incident response team coordinating in a war room around a shared timeline", "فريق استجابة للحوادث ينسّق في غرفة عمليات حول جدول زمني مشترك"],
-  "penetration-testing": ["soc-analysts", "Security specialists working through findings at their workstations", "مختصون أمنيون يعملون على النتائج في محطات عملهم"],
-  "cloud-security": ["data-hall", "Rows of server racks in an in-Kingdom data hall", "صفوف من خزائن الخوادم في قاعة بيانات داخل المملكة"],
-  "ncnicc-compliance": ["compliance-review", "Specialists reviewing critical infrastructure control evidence", "مختصون يراجعون أدلة ضوابط البنية التحتية الحساسة"]
+  "penetration-testing": ["pentest-office", "Two penetration testers reviewing an attack path and findings in a Riyadh office", "مختبرا اختراق يراجعان مسار الهجوم والنتائج في مكتب بالرياض"],
+  "cloud-security": ["cloud-datacentre", "A cloud security engineer checking configuration on a tablet between server racks in an in-Kingdom data centre", "مهندس أمن سحابي يراجع الإعدادات على جهاز لوحي بين خزائن الخوادم في مركز بيانات داخل المملكة"],
+  "ncnicc-compliance": ["ncnicc-control-room", "An operations engineer and a cyber compliance specialist reviewing plant control systems in a critical infrastructure control room", "مهندس تشغيل ومختصة امتثال سيبراني يراجعان أنظمة التحكم في غرفة تحكم لمنشأة بنية تحتية حساسة"]
 };
 const lpPhoto = (slug, lang) => { const [f, en, ar] = PHOTO[slug]; return `<figure class="lp-photo"><img src="/photos/${f}-1376.webp" srcset="/photos/${f}-760.webp 760w, /photos/${f}-1376.webp 1376w" sizes="(max-width:1024px) 100vw, 560px" width="1376" height="768" alt="${esc(lang === "ar" ? ar : en)}" fetchpriority="high" decoding="async"></figure>`; };
 // Static vector backgrounds (no runtime script needed on these pages).
