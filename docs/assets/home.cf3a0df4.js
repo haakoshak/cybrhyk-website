@@ -93,7 +93,7 @@
     ["bgAssess",29,s=>topo(s,{n:22,c:"#0066FF",hi:"#00A8E8",op:.10})],
     ["bgWhy",31,s=>lattice(s,{a:13,unlit:"transparent",stroke:cssv("--lat-stroke"),colors:["#00D1FF"],lit:.06,mirror:true})],
     ["bgRoad",35,s=>floor(s,{hz:.55,c:"#0066FF",hi:"#00D1FF",op:.22,towers:18})],
-    ["ctaLattice",33,s=>lattice(s,{a:16,unlit:"#111C42",colors:SPEC,mirror:true,litFn:(x,y)=>rnd()<(0.02+0.2*x)})]
+    ["ctaLattice",33,s=>lattice(s,{a:16,unlit:cssv("--night2"),colors:SPEC,mirror:true,litFn:(x,y)=>rnd()<(0.02+0.2*x)})]
   ];
   let bgio;
   addEventListener("themechange",()=>drawAll());

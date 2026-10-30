@@ -75,21 +75,22 @@
   --f-body:"IBM Plex Sans","IBM Plex Sans Arabic",system-ui,sans-serif;
   --f-mono:"IBM Plex Mono","IBM Plex Sans Arabic",ui-monospace,monospace;
   --fwd:90deg;
-  --ink:#0A1230; --paper-rgb:246,244,239; --lat-unlit:#ECE8DF; --lat-stroke:#E2DED4;
+  --ink:#0A1230; --n-track:#18244F; --paper-rgb:246,244,239; --lat-unlit:#ECE8DF; --lat-stroke:#E2DED4;
   --tint-blue:#E5F0FF; --tint-orange:#FFF1E6; --tint-violet:#F0EBFF; --tint-lime:#E8F5D0; --ink-lime:#3B5200;
   color-scheme:light;
 }
 /* evening theme: follows the computer, or the visitor's choice in the top bar */
 html[data-theme=dark]{
-  --paper:#0A1028; --paper-rgb:10,16,40; --white:#111A38; --line:#25305A; --muted:#A3AECD; --ink:#E9EDF8;
-  --night:#050916; --line-n:#1F2A52;
-  --t-blue:#5B9BFF; --t-cyan:#3FD3F2; --t-violet:#A58BFF; --t-magenta:#FF73B3; --t-tangerine:#FFA567; --t-lime:#B9E84F;
-  --lat-unlit:#141D3E; --lat-stroke:#1C2650;
-  --tint-blue:rgba(0,102,255,.2); --tint-orange:rgba(255,138,61,.18); --tint-violet:rgba(139,92,255,.22); --tint-lime:rgba(198,244,50,.14); --ink-lime:#C6F432;
+  /* evening palette shared with haykalah.com: iris surfaces, lavender lines and ink */
+  --paper:#1C1840; --paper-rgb:28,24,64; --white:#2E2760; --line:#41377D; --muted:#BDB6E0; --ink:#F4F3FA;
+  --night:#120F2C; --night2:#241F52; --n-track:#2E2760; --line-n:#41377D; --muted-n:#BDB6E0;
+  --t-blue:#7FA8FF; --t-cyan:#5FD8F2; --t-violet:#B3A9E2; --t-magenta:#FF8CC0; --t-tangerine:#FFAE78; --t-lime:#C2EC5C;
+  --lat-unlit:#251F55; --lat-stroke:#2E2760;
+  --tint-blue:rgba(127,168,255,.18); --tint-orange:rgba(255,174,120,.16); --tint-violet:rgba(179,169,226,.2); --tint-lime:rgba(198,244,50,.14); --ink-lime:#C6F432;
   color-scheme:dark;
 }
 html[data-theme=dark] nav.top .logo-svg [fill="#0A1230"],html[data-theme=dark] nav.top .logo-svg [fill="#1D1D1B"]{fill:#fff}
-html[data-theme=dark] nav.top .logo-svg [fill="#4A5578"]{fill:#A3AECD}
+html[data-theme=dark] nav.top .logo-svg [fill="#4A5578"]{fill:#BDB6E0}
 html[data-theme=dark] img{filter:brightness(.92)}
 body{transition:background-color .35s,color .35s}
 [dir=rtl]{--f-body:"IBM Plex Sans Arabic","IBM Plex Sans",system-ui,sans-serif;--fwd:270deg}
@@ -395,7 +396,7 @@ html:not([data-mode]) .ti-auto{display:block}
 .area svg{width:100%;height:190px;direction:ltr}
 .sevrow{display:grid;grid-template-columns:76px 1fr 46px;gap:10px;align-items:center;margin:12px 0;font:500 12px var(--f-mono)}
 [dir=rtl] .sevrow{grid-template-columns:70px 1fr 46px;font-size:13px}
-.sevrow .tr{height:10px;background:#18244F;border-radius:5px;overflow:hidden}
+.sevrow .tr{height:10px;background:var(--n-track);border-radius:5px;overflow:hidden}
 .sevrow .fl{height:100%;border-radius:5px;transition:width .8s cubic-bezier(.2,.8,.2,1)}
 .sevrow .c{text-align:end;color:#fff}
 .feed{overflow-x:auto}
@@ -403,15 +404,15 @@ html:not([data-mode]) .ti-auto{display:block}
 [dir=rtl] .feed table{font-size:13px}
 .feed th{text-align:start;font:600 10px var(--f-body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted-n);padding:6px 8px;border-bottom:1px solid var(--line-n)}
 [dir=rtl] .feed th{letter-spacing:0;font-size:12px}
-.feed td{padding:9px 8px;border-bottom:1px solid #18244F;color:#D8DDEC;white-space:nowrap}
+.feed td{padding:9px 8px;border-bottom:1px solid var(--n-track);color:#D8DDEC;white-space:nowrap}
 .feed tr.new td{animation:rowin 1.2s ease}
 @keyframes rowin{from{background:rgba(0,209,255,.16)}to{background:transparent}}
 .sv{font-weight:500}
-.st-pill{font:500 11px var(--f-body);padding:4px 8px;border-radius:999px;background:#18244F}
+.st-pill{font:500 11px var(--f-body);padding:4px 8px;border-radius:999px;background:var(--n-track)}
 .tac{margin:9px 0}
 .tac .row{display:flex;justify-content:space-between;font:400 12px var(--f-body);color:#D8DDEC;margin-bottom:5px}
 [dir=rtl] .tac .row{font-size:13.5px}
-.tac .tr{height:6px;background:#18244F;border-radius:3px;overflow:hidden}
+.tac .tr{height:6px;background:var(--n-track);border-radius:3px;overflow:hidden}
 .tac .fl{height:100%;background:linear-gradient(var(--fwd),var(--blue),var(--cyan));transition:width .8s}
 .assetmap svg{width:100%;margin-top:6px}
 .dash-note{font:400 11px var(--f-mono);color:#6F7A9C;margin-top:14px;text-align:center}
@@ -938,7 +939,7 @@ html.cards footer{position:relative;z-index:40}
           <span>SOC CONSOLE</span>
         </div>
         <div class="envs" id="envs"><button class="on" data-i="0">Bank · Riyadh</button><button class="" data-i="1">Insurer · Jeddah</button><button class="" data-i="2">Manufacturer · Jubail</button></div>
-        <div class="clock"><span class="pulse"></span><span>RIYADH</span> <b id="clock">12:43:53</b> <span class="illus-tag">SIMULATED</span></div>
+        <div class="clock"><span class="pulse"></span><span>RIYADH</span> <b id="clock">12:48:36</b> <span class="illus-tag">SIMULATED</span></div>
       </div>
       <div class="kpis" id="kpis"><div class="kpi-t"><div class="k">MTTD</div><div class="v">06:40</div><div class="d up">▼ 12%</div></div><div class="kpi-t"><div class="k">MTTR</div><div class="v">38m</div><div class="d up">▼ 8%</div></div><div class="kpi-t"><div class="k">ALERTS · 24H</div><div class="v">1,003</div><div class="d dn">▲ 4%</div></div><div class="kpi-t"><div class="k">ESCALATED</div><div class="v">10</div><div class="d ">&nbsp;</div></div><div class="kpi-t"><div class="k">AUTOMATION</div><div class="v">71%</div><div class="d up">▲ 3 pts</div></div><div class="kpi-t"><div class="k">ANALYSTS ON SHIFT</div><div class="v">6 / 6</div><div class="d up">24/7</div></div></div>
       <div class="dgrid">
@@ -956,7 +957,7 @@ html.cards footer{position:relative;z-index:40}
       <div class="dgrid">
         <div class="dcard feed">
           <div class="card-h"><span>Live incident feed</span><span class="pulse"></span></div>
-          <table><thead><tr><th>Time</th><th>ID</th><th>Severity</th><th>Tactic (MITRE)</th><th>Asset</th><th>Status</th><th>Analyst</th></tr></thead><tbody id="feedBody"><tr class=""><td>12:43:49</td><td>INC-4423</td><td><span class="sv" style="color:var(--sev-l)">LOW</span></td><td>Lateral Movement</td><td>cloud-k8s-2</td><td><span class="st-pill" style="color:var(--cyan)">Triaged</span></td><td>N.H.</td></tr><tr class=""><td>12:43:02</td><td>INC-4422</td><td><span class="sv" style="color:var(--sev-l)">LOW</span></td><td>Persistence</td><td>dc-ad-01</td><td><span class="st-pill" style="color:var(--cyan)">Triaged</span></td><td>R.S.</td></tr><tr class=""><td>12:42:15</td><td>INC-4421</td><td><span class="sv" style="color:var(--sev-m)">MEDIUM</span></td><td>Initial Access</td><td>vpn-gw-01</td><td><span class="st-pill" style="color:var(--cyan)">Triaged</span></td><td>A.R.</td></tr><tr class=""><td>12:41:28</td><td>INC-4420</td><td><span class="sv" style="color:var(--sev-h)">HIGH</span></td><td>Initial Access</td><td>web-portal</td><td><span class="st-pill" style="color:var(--lime)">Contained</span></td><td>R.S.</td></tr><tr class=""><td>12:40:41</td><td>INC-4419</td><td><span class="sv" style="color:var(--sev-l)">LOW</span></td><td>Exfiltration</td><td>core-db-02</td><td><span class="st-pill" style="color:var(--lime)">Contained</span></td><td>M.K.</td></tr><tr class=""><td>12:39:54</td><td>INC-4418</td><td><span class="sv" style="color:var(--sev-m)">MEDIUM</span></td><td>Initial Access</td><td>vpn-gw-01</td><td><span class="st-pill" style="color:var(--lime)">Contained</span></td><td>M.K.</td></tr><tr class=""><td>12:39:07</td><td>INC-4417</td><td><span class="sv" style="color:var(--sev-l)">LOW</span></td><td>Discovery</td><td>fin-ws-027</td><td><span class="st-pill" style="color:var(--lime)">Contained</span></td><td>S.A.</td></tr></tbody></table>
+          <table><thead><tr><th>Time</th><th>ID</th><th>Severity</th><th>Tactic (MITRE)</th><th>Asset</th><th>Status</th><th>Analyst</th></tr></thead><tbody id="feedBody"><tr class=""><td>12:48:32</td><td>INC-4423</td><td><span class="sv" style="color:var(--sev-m)">MEDIUM</span></td><td>Credential Access</td><td>web-portal</td><td><span class="st-pill" style="color:var(--magenta)">Escalated</span></td><td>N.H.</td></tr><tr class=""><td>12:47:45</td><td>INC-4422</td><td><span class="sv" style="color:var(--sev-m)">MEDIUM</span></td><td>Exfiltration</td><td>vpn-gw-01</td><td><span class="st-pill" style="color:var(--lime)">Contained</span></td><td>N.H.</td></tr><tr class=""><td>12:46:58</td><td>INC-4421</td><td><span class="sv" style="color:var(--sev-m)">MEDIUM</span></td><td>Persistence</td><td>core-db-02</td><td><span class="st-pill" style="color:var(--muted-n)">Closed</span></td><td>R.S.</td></tr><tr class=""><td>12:46:11</td><td>INC-4420</td><td><span class="sv" style="color:var(--sev-l)">LOW</span></td><td>Exfiltration</td><td>mail-gw-01</td><td><span class="st-pill" style="color:var(--lime)">Contained</span></td><td>N.H.</td></tr><tr class=""><td>12:45:24</td><td>INC-4419</td><td><span class="sv" style="color:var(--sev-m)">MEDIUM</span></td><td>Discovery</td><td>m365-tenant</td><td><span class="st-pill" style="color:var(--magenta)">Escalated</span></td><td>F.Q.</td></tr><tr class=""><td>12:44:37</td><td>INC-4418</td><td><span class="sv" style="color:var(--sev-l)">LOW</span></td><td>Exfiltration</td><td>vpn-gw-01</td><td><span class="st-pill" style="color:var(--lime)">Contained</span></td><td>M.K.</td></tr><tr class=""><td>12:43:50</td><td>INC-4417</td><td><span class="sv" style="color:var(--sev-l)">LOW</span></td><td>Lateral Movement</td><td>web-portal</td><td><span class="st-pill" style="color:var(--lime)">Contained</span></td><td>A.R.</td></tr></tbody></table>
         </div>
         <div class="dcard">
           <div class="card-h"><span>Top tactics · 7 days</span></div>
@@ -1128,7 +1129,7 @@ html.cards footer{position:relative;z-index:40}
   </div>
 </footer>
 
-<script src="/assets/home.a990ab44.js" defer></script>
+<script src="/assets/home.cf3a0df4.js" defer></script>
 <script src="/assets/motion.d3372e76.js" defer></script>
 
 
