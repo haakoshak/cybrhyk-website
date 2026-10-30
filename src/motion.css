@@ -41,7 +41,7 @@ html.cards body>header.hero>.wrap{transform:scale(calc(1 - var(--x,0) * .06));op
 html.cards footer{position:relative;z-index:40}
 
 /* ---------- dot navigator ---------- */
-.dots{position:fixed;top:50%;inset-inline-end:18px;transform:translateY(-50%);z-index:70;display:flex;flex-direction:column;gap:12px;padding:12px 8px;border-radius:999px;background:rgba(246,244,239,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 10px 30px -18px rgba(10,18,48,.5)}
+.dots{position:fixed;top:50%;inset-inline-end:18px;transform:translateY(-50%);z-index:70;display:flex;flex-direction:column;gap:12px;padding:12px 8px;border-radius:999px;background:rgba(var(--paper-rgb),.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 10px 30px -18px rgba(10,18,48,.5)}
 .dots.on-night{background:rgba(17,28,66,.55)}
 .dots button{position:relative;width:10px;height:18px;border:0;padding:0;cursor:pointer;background:#9AA6C6;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);transition:background .25s,transform .35s var(--ease-out)}
 .dots button:hover{transform:scale(1.25)}

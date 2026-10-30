@@ -38,7 +38,7 @@ const other = l => (l === "ar" ? "en" : "ar");
 const crlf = s => s.replace(/\r\n/g, "\n");
 const srcHome = crlf(fs.readFileSync(path.join(SRC, "home.html"), "utf8"));
 const baseCss = srcHome.match(/<style>([\s\S]*?)<\/style>/)[1];
-const css = baseCss + "\n" + fs.readFileSync(path.join(SRC, "motion.css"), "utf8") + "\n" + fs.readFileSync(path.join(SRC, "landing.css"), "utf8");
+const css = fs.readFileSync(path.join(SRC, "fonts", "fonts.css"), "utf8") + baseCss + "\n" + fs.readFileSync(path.join(SRC, "motion.css"), "utf8") + "\n" + fs.readFileSync(path.join(SRC, "landing.css"), "utf8");
 const homeJs = srcHome.match(/<script>\n(\(function\(\)\{[\s\S]*?\n\}\)\(\);)\n<\/script>/)[1];
 const motionJs = fs.readFileSync(path.join(SRC, "motion.js"), "utf8");
 const A = { css: `site.${hash(css)}.css`, home: `home.${hash(homeJs)}.js`, motion: `motion.${hash(motionJs)}.js` };
@@ -47,6 +47,7 @@ fs.rmSync(path.join(OUT, "assets"), { recursive: true, force: true });
 write(`assets/${A.css}`, css);
 write(`assets/${A.home}`, homeJs);
 write(`assets/${A.motion}`, motionJs);
+for (const f of fs.readdirSync(path.join(SRC, "fonts")).filter(f => f.endsWith(".woff2"))) write(`assets/fonts/${f}`, fs.readFileSync(path.join(SRC, "fonts", f)));
 fs.rmSync(path.join(OUT, "photos"), { recursive: true, force: true });
 for (const f of fs.readdirSync(path.join(SRC, "photos", "web"))) write(`photos/${f}`, fs.readFileSync(path.join(SRC, "photos", "web", f)));
 for (const f of ["favicon.ico", "icon.svg", "apple-touch-icon.png", "icon-192.png", "icon-512.png", "logo-1024.png"]) write(`assets/${f}`, fs.readFileSync(path.join(SRC, "brand", f)));
@@ -71,6 +72,8 @@ function head({ lang, title, desc, enPath, arPath, ogTitle, ogDesc, graph }) {
 <link rel="alternate" hreflang="x-default" href="${SITE + enPath}">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="msvalidate.01" content="3F4AE95AB422BA13A6A015BC8DAB6C1B">
+${(lang === "ar" ? ["readex-pro-400-arabic", "ibm-plex-sans-arabic-400-arabic"] : ["readex-pro-400-latin", "ibm-plex-sans-400-latin"]).map(f => `<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/${f}.woff2" crossorigin>`).join("\n")}
+<meta name="color-scheme" content="light dark">
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "5bc566f58a1b4c39a17e2e0fc2ad5459"}'></script>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="${lang === "ar" ? "سايبر هيكلة" : "Cyber HAYKALAH"}">
@@ -113,9 +116,9 @@ try {
         { "@type": "WebPage", "@id": `${SITE + homePath(lang)}#page`, url: SITE + homePath(lang), name: HOME[lang].title, description: HOME[lang].desc, inLanguage: lang, isPartOf: { "@id": `${SITE}/#website` }, about: { "@id": `${SITE}/#org` } }]
     }));
     const n0 = h.length;
-    h = h.replace(/<style>[\s\S]*?<\/style>\s*<link rel="stylesheet" href="motion.css">/, `<link rel="stylesheet" href="/assets/${A.css}">`);
+    h = h.replace(/<style>[\s\S]*?<\/style>\s*<link rel="stylesheet" href="motion.css">/, `<style>${css}</style>`);
     h = h.replace(/<script>\n\(function\(\)\{[\s\S]*?\n\}\)\(\);\n<\/script>\s*<script src="motion.js"><\/script>/, `<script src="/assets/${A.home}" defer></script>\n<script src="/assets/${A.motion}" defer></script>`);
-    if (h.includes("<style>") || h.includes('src="motion.js"')) throw new Error(`asset extraction failed (${lang})`);
+    if (h.includes('href="motion.css"') || h.includes('src="motion.js"') || (h.match(/<style>/g) || []).length !== 1) throw new Error(`asset extraction failed (${lang})`);
     h = h.replace(new RegExp(`(<svg[^>]*\\bid="(?:${BG_IDS.join("|")})"[^>]*>)[\\s\\S]*?(<\\/svg>)`, "g"), "$1$2");
     if (lang === "ar") h = h.replace(/\salt="[^"]*"(\s[^>]*?)?\sdata-alt-ar="([^"]*)"/g, (m, mid, ar) => ` alt="${ar}"${mid || ""}`);
     h = h.replace(/\sdata-alt-ar="[^"]*"/g, "");
@@ -195,11 +198,8 @@ for (const page of PAGES) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ${head({ lang, title: t.title, desc: t.desc, enPath: lpPath("en", page.slug), arPath: lpPath("ar", page.slug), graph })}
-<script>document.documentElement.classList.add("js")</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Readex+Pro:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Readex+Pro:wght@400;600&display=swap"></noscript>
-<link rel="stylesheet" href="/assets/${A.css}">
+<script>(function(d){d.classList.add("js");var t=null;try{t=localStorage.getItem("theme")}catch(e){}var m=t==="light"||t==="dark"?t:"auto";d.setAttribute("data-mode",m);d.setAttribute("data-theme",m==="auto"?(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"):m)})(document.documentElement)</script>
+<style>${css}</style>
 </head>
 <body>
 ${nav}
@@ -328,8 +328,7 @@ write("404.html", `<!doctype html>
 <title>Page not found | Cyber HAYKALAH</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="/assets/favicon.ico" sizes="48x48">
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=Readex+Pro:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=Readex+Pro:wght@600&display=swap"></noscript>
-<link rel="stylesheet" href="/assets/${A.css}">
+<style>${css}</style>
 </head>
 <body class="night" style="min-height:100vh;display:grid;place-items:center;text-align:center">
 <main style="padding:40px 20px">

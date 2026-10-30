@@ -11,6 +11,23 @@
   const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
   let glow=null;
 
+  /* ---------- theme: follows the computer unless the visitor picks light or dark ---------- */
+  const tb=$("#themeBtn"), mq=matchMedia("(prefers-color-scheme: dark)");
+  const TL={auto:["Colour theme: automatic (follows your device)","المظهر: تلقائي (حسب جهازك)"],light:["Colour theme: light","المظهر: فاتح"],dark:["Colour theme: dark","المظهر: داكن"]};
+  function applyTheme(mode,quiet){
+    const was=doc.dataset.theme;
+    doc.dataset.mode=mode; doc.dataset.theme=mode==="auto"?(mq.matches?"dark":"light"):mode;
+    if(tb){const t=TL[mode][AR?1:0];tb.setAttribute("aria-label",t);tb.title=t}
+    if(!quiet&&was!==doc.dataset.theme)dispatchEvent(new Event("themechange"));
+  }
+  if(tb)tb.addEventListener("click",()=>{
+    const order=["auto","light","dark"], m=order[(order.indexOf(doc.dataset.mode||"auto")+1)%3];
+    try{m==="auto"?localStorage.removeItem("theme"):localStorage.setItem("theme",m)}catch(e){}
+    applyTheme(m);
+  });
+  mq.addEventListener("change",()=>{if((doc.dataset.mode||"auto")==="auto")applyTheme("auto")});
+  applyTheme(doc.dataset.mode||"auto",true);
+
   /* ---------- nav ---------- */
   const nav=$("#nav"), links=$("#links"), menu=$("#menuBtn");
   if(nav)addEventListener("scroll",()=>nav.classList.toggle("scrolled",scrollY>10),{passive:true});

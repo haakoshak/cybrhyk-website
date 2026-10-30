@@ -12,6 +12,7 @@
   function size(svg){const w=svg.clientWidth||svg.parentNode.clientWidth, h=svg.clientHeight||svg.parentNode.clientHeight;svg.setAttribute("viewBox",`0 0 ${w} ${h}`);return [w,h]}
 
   /* ---------- lattice ---------- */
+  const cssv=n=>getComputedStyle(document.documentElement).getPropertyValue(n).trim();
   const MOB=()=>innerWidth<720, dens=n=>MOB()?Math.round(n*.55):n;
   function lattice(svg,opt){
     const [w,h]=size(svg), a=opt.a*(MOB()?1.45:1), b=a*R, flip=opt.mirror&&ar();
@@ -81,7 +82,7 @@
 
   // The hero backgrounds draw at once; the others when their section comes within 600px of the screen, and redrawn on resize.
   const BG=[
-    ["heroLattice",7,s=>lattice(s,{a:15,unlit:"#ECE8DF",colors:SPEC,mirror:true,litFn:(x,y)=>rnd()<(0.05+0.22*x*(1-y*.5))})],
+    ["heroLattice",7,s=>lattice(s,{a:15,unlit:cssv("--lat-unlit"),colors:SPEC,mirror:true,litFn:(x,y)=>rnd()<(0.05+0.22*x*(1-y*.5))})],
     ["bgHero",11,s=>circuit(s,{n:26,chips:3,c:"#0066FF",hi:"#00D1FF",op:.10})],
     ["bgVision",13,s=>network(s,{n:70,c:"#0066FF",op:.16})],
     ["bgReg",15,s=>circuit(s,{n:40,chips:6,c:"#0066FF",hi:"#00A8E8",op:.13})],
@@ -90,11 +91,12 @@
     ["bgDash",25,s=>floor(s,{hz:.3,c:"#3D5AB5",hi:"#00D1FF",op:.4,towers:22})],
     ["bgComp",27,s=>network(s,{n:60,c:"#8B5CFF",op:.14})],
     ["bgAssess",29,s=>topo(s,{n:22,c:"#0066FF",hi:"#00A8E8",op:.10})],
-    ["bgWhy",31,s=>lattice(s,{a:13,unlit:"transparent",stroke:"#E2DED4",colors:["#00D1FF"],lit:.06,mirror:true})],
+    ["bgWhy",31,s=>lattice(s,{a:13,unlit:"transparent",stroke:cssv("--lat-stroke"),colors:["#00D1FF"],lit:.06,mirror:true})],
     ["bgRoad",35,s=>floor(s,{hz:.55,c:"#0066FF",hi:"#00D1FF",op:.22,towers:18})],
     ["ctaLattice",33,s=>lattice(s,{a:16,unlit:"#111C42",colors:SPEC,mirror:true,litFn:(x,y)=>rnd()<(0.02+0.2*x)})]
   ];
   let bgio;
+  addEventListener("themechange",()=>drawAll());
   function drawAll(){
     if(bgio)bgio.disconnect();
     bgio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const d=BG.find(x=>x[0]===e.target.id);seed=d[1];d[2](e.target);bgio.unobserve(e.target)}),{rootMargin:"600px 0px"});
