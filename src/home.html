@@ -9,7 +9,7 @@
 <script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Readex+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Readex+Pro:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Readex+Pro:wght@400;600&display=swap"></noscript>
 <style>
 :root{
   --paper:#F6F4EF; --white:#FFFFFF; --night:#0A1230; --night2:#111C42; --line:#E2DED4; --line-n:#24305C;
@@ -38,7 +38,7 @@ h2{font-size:clamp(28px,3.6vw,44px)}
 h3{font-size:22px;line-height:1.25}
 .label{font:600 11px/16px var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--t-blue)}
 [dir=rtl] .label{font-size:13px;line-height:20px;letter-spacing:0}
-[dir=rtl] .status,[dir=rtl] .avail,[dir=rtl] .badge,[dir=rtl] .tag,[dir=rtl] .ro-row.h>div,[dir=rtl] .foot h5,[dir=rtl] .stage,[dir=rtl] .sn,[dir=rtl] .kpi-t .k,[dir=rtl] .card-h{letter-spacing:0}
+[dir=rtl] .status,[dir=rtl] .avail,[dir=rtl] .badge,[dir=rtl] .tag,[dir=rtl] .ro-row.h>div,[dir=rtl] .foot .fh,[dir=rtl] .stage,[dir=rtl] .sn,[dir=rtl] .kpi-t .k,[dir=rtl] .card-h{letter-spacing:0}
 .mono{font-family:var(--f-mono)}
 .muted{color:var(--muted)}
 .lead{font-size:clamp(17px,1.5vw,19px);color:var(--muted);max-width:720px}
@@ -133,7 +133,7 @@ nav.top.scrolled{border-bottom-color:var(--line)}
 .pillar{border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:rgba(246,244,239,.92);transition:transform .25s,box-shadow .25s;backdrop-filter:blur(2px)}
 .pillar:hover{transform:translateY(-3px);box-shadow:0 18px 40px -24px rgba(10,18,48,.35)}
 .pillar .gem{width:16px;height:42px;margin-bottom:18px}
-.pillar h4{font-size:18px;margin-bottom:8px}
+.pillar h3{font-size:18px;margin-bottom:8px}
 .pillar p{font-size:14.5px;color:var(--muted);line-height:1.55}
 [dir=rtl] .pillar p{font-size:15.5px;line-height:1.8}
 .chart-card{border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:rgba(246,244,239,.94)}
@@ -160,7 +160,7 @@ nav.top.scrolled{border-bottom-color:var(--line)}
 .tl .m{position:relative;padding-top:34px;padding-inline-end:16px}
 .tl .m::before{content:"";position:absolute;top:0;inset-inline-start:0;width:12px;height:20px;background:var(--c);clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%)}
 .tl .y{font:500 14px var(--f-mono);color:var(--night)}
-.tl h4{font-size:15.5px;margin:8px 0 6px}
+.tl h3{font-size:15.5px;margin:8px 0 6px}
 .tl p{font-size:13.5px;color:var(--muted);line-height:1.5}
 [dir=rtl] .tl p{font-size:14.5px;line-height:1.75}
 
@@ -181,7 +181,7 @@ nav.top.scrolled{border-bottom-color:var(--line)}
 .st-force{background:#E5F0FF;color:var(--t-blue)}
 .st-draft{background:#FFF1E6;color:var(--t-tangerine)}
 .st-notified{background:#F0EBFF;color:var(--t-violet)}
-.reg h4{font-size:18px}
+.reg h3{font-size:18px}
 .reg p{font-size:14px;color:var(--muted);line-height:1.55}
 [dir=rtl] .reg p{font-size:15px;line-height:1.8}
 .reg .who{font-size:12.5px;color:var(--night);border-top:1px dashed var(--line);padding-top:12px;margin-top:auto}
@@ -218,7 +218,7 @@ nav.top.scrolled{border-bottom-color:var(--line)}
 .wstep{padding-inline-end:18px;position:relative}
 .wstep .bar{height:6px;border-radius:3px;margin-bottom:16px}
 .wstep .d{font:500 13px var(--f-mono)}
-.wstep h4{font-size:16px;margin:6px 0}
+.wstep h3{font-size:16px;margin:6px 0}
 .wstep p{font-size:13.5px;color:var(--muted);line-height:1.5}
 [dir=rtl] .wstep p{font-size:14.5px;line-height:1.75}
 .rule{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;margin-top:28px;padding:20px;background:var(--white);border-radius:12px;border-inline-start:4px solid var(--magenta)}
@@ -226,7 +226,7 @@ nav.top.scrolled{border-bottom-color:var(--line)}
 .path{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:56px}
 .step{border:1px solid var(--line);border-radius:var(--radius);padding:26px;background:var(--white);position:relative}
 .step .n{font:500 13px var(--f-mono);color:var(--t-blue)}
-.step h4{font-size:19px;margin:10px 0 8px}
+.step h3{font-size:19px;margin:10px 0 8px}
 .step p{font-size:14px;color:var(--muted)}
 [dir=rtl] .step p{font-size:15px}
 .step .tag{display:inline-block;margin-top:14px;font:600 10px/1.3 var(--f-body);letter-spacing:.12em;text-transform:uppercase;padding:6px 9px;border-radius:999px}
@@ -280,7 +280,7 @@ nav.top.scrolled{border-bottom-color:var(--line)}
 [dir=rtl] .svc dl{font-size:14px}[dir=rtl] .svc dd{font-size:13.5px}
 .avail{position:absolute;top:24px;inset-inline-end:24px;font:600 10px/1 var(--f-body);letter-spacing:.12em;text-transform:uppercase;padding:7px 10px;border-radius:999px;transition:.3s}
 [dir=rtl] .avail{font-size:12px}
-.av-now{background:#E8F5D0;color:var(--t-lime)}
+.av-now{background:#E8F5D0;color:#3B5200}
 .av-opt{background:#F0EBFF;color:var(--t-violet)}
 .av-rfcs{background:#FFF1E6;color:var(--t-tangerine)}
 .svc.prio{border-color:var(--blue);box-shadow:0 0 0 1px var(--blue)}
@@ -410,7 +410,7 @@ nav.top.scrolled{border-bottom-color:var(--line)}
 .ro-row .q{font-family:var(--f-head);font-weight:600}
 .four{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:64px}
 .four .p{padding:24px;border-radius:16px;background:var(--white);border:1px solid var(--line)}
-.four .p h4{font-size:19px;margin:14px 0 6px}
+.four .p h3{font-size:19px;margin:14px 0 6px}
 .four .p p{font-size:14px;color:var(--muted)}
 [dir=rtl] .four .p p{font-size:15px}
 .voice{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
@@ -423,7 +423,7 @@ nav.top.scrolled{border-bottom-color:var(--line)}
 .gatec{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:22px;position:relative;overflow:hidden}
 .gatec::after{content:"";position:absolute;left:0;top:0;height:4px;width:100%;background:var(--c)}
 .gatec .g{font:500 28px/1 var(--f-mono);color:var(--c2)}
-.gatec h4{font-size:16px;margin:14px 0 8px}
+.gatec h3{font-size:16px;margin:14px 0 8px}
 .gatec p{font-size:13.5px;color:var(--muted);line-height:1.5}
 [dir=rtl] .gatec p{font-size:14.5px;line-height:1.75}
 .gatec .ev{margin-top:14px;font:400 11.5px/1.5 var(--f-mono);color:var(--night);background:var(--paper);padding:8px 10px;border-radius:8px}
@@ -446,8 +446,8 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
 .foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px}
 .foot .logo-svg{height:28px;width:auto;margin-bottom:16px}
 .foot .logo-ar.logo-svg{height:34px}
-.foot h5{font:600 11px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:14px}
-[dir=rtl] .foot h5{font-size:13px}
+.foot .fh{font:600 11px/1 var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:14px}
+[dir=rtl] .foot .fh{font-size:13px}
 .foot ul{list-style:none;display:grid;gap:8px}
 .foot a:hover{color:#fff}
 .hero-photo{position:absolute;top:56px;inset-inline-start:36px;width:calc(100% - 36px);height:calc(100% - 112px);object-fit:cover;border-radius:28px;box-shadow:0 30px 80px -30px rgba(10,18,48,.45)}
@@ -456,7 +456,7 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
 .photo-band{margin:56px 0 0;border-radius:24px;overflow:hidden;aspect-ratio:1376/560;box-shadow:0 24px 70px -34px rgba(10,18,48,.4)}
 .photo-band img{width:100%;height:100%;object-fit:cover;display:block}
 @media (max-width:720px){.hero-photo{inset-inline-start:0;width:100%;top:24px;height:calc(100% - 48px)}.photo-band{aspect-ratio:4/3;margin-top:36px}}
-.disclaimer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line-n);font:400 11.5px/1.6 var(--f-mono);color:#6F7A9C}
+.disclaimer{margin-top:40px;padding-top:24px;border-top:1px solid var(--line-n);font:400 11.5px/1.6 var(--f-mono);color:#A3ACC9}
 [dir=rtl] .disclaimer{font-size:13px;line-height:1.9}
 
 /* ---------- reveal ---------- */
@@ -464,6 +464,7 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
 .rv.in{opacity:1;transform:none}
 @keyframes breathe{0%,100%{opacity:var(--o1,.95)}50%{opacity:var(--o2,.25)}}
 .lit-cell{animation:breathe var(--d,8s) ease-in-out infinite;animation-delay:var(--dl,0s)}
+.off .lit-cell,.off .flow,.off .sweep{animation-play-state:paused}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
 
 /* ---------- responsive ---------- */
@@ -558,7 +559,7 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
         </div>
       </div>
       <div class="hero-art" aria-hidden="true">
-        <img class="hero-photo" src="/photos/soc-analysts-1376.webp" srcset="/photos/soc-analysts-760.webp 760w, /photos/soc-analysts-1376.webp 1376w" sizes="(max-width:760px) 100vw, 1200px" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
+        <img class="hero-photo" src="/photos/soc-analysts-1376.webp" srcset="/photos/soc-analysts-480.webp 480w, /photos/soc-analysts-760.webp 760w, /photos/soc-analysts-1376.webp 1376w" sizes="(max-width:760px) 100vw, 1200px" width="1376" height="768" alt="" fetchpriority="high" decoding="async">
         <svg id="heroLattice"></svg>
         <div class="fade"></div>
         <div class="console">
@@ -594,10 +595,10 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
     </div>
     <div class="vision-grid">
       <div class="pillars rv">
-        <div class="pillar"><svg class="gem" viewBox="0 0 16 42"><path d="M8 0 16 21 8 42 0 21Z" fill="var(--blue)"/></svg><h4 data-ar="السيادة الرقمية">Digital sovereignty</h4><p data-ar="يبقى الرصد والبيانات والاستجابة داخل المملكة. فمراكز العمليات المحلية وإقامة البيانات وفق سياسات مكتب إدارة البيانات الوطنية هدفٌ وطني، لا ميزةٌ إضافية.">Detection, data and response stay in the Kingdom. In-Kingdom SOCs and NDMO data residency are the national objective, not a feature.</p></div>
-        <div class="pillar"><svg class="gem" viewBox="0 0 16 42"><path d="M8 0 16 21 8 42 0 21Z" fill="var(--cyan)"/></svg><h4 data-ar="الكفاءات السعودية">Saudi talent</h4><p data-ar="يشترط الضابط 1-2-2 من الضوابط الأساسية ECC-2:2024 شغل جميع وظائف الأمن السيبراني بكفاءات سعودية مؤهلة بدوام كامل. فكل مقعد محلل وظيفةٌ وطنية عالية المهارة.">ECC-2:2024 control 1-2-2 requires qualified, full-time Saudi professionals in every cybersecurity role. Every analyst seat is a national high-skill job.</p></div>
-        <div class="pillar"><svg class="gem" viewBox="0 0 16 42"><path d="M8 0 16 21 8 42 0 21Z" fill="var(--violet)"/></svg><h4 data-ar="طلبٌ تفرضه الأنظمة">Mandated demand</h4><p data-ar="تُلزم ضوابط ECC وOTCC وCCC وNCNICC وإطار البنك المركزي السعودي ونظام حماية البيانات الشخصية فئاتٍ محددة بمواعيد محددة. والامتثال يُدقَّق كل عام.">ECC, OTCC, CCC, NCNICC, the SAMA framework and the PDPL each bind a named population by a named date. Compliance is audited, every year.</p></div>
-        <div class="pillar"><svg class="gem" viewBox="0 0 16 42"><path d="M8 0 16 21 8 42 0 21Z" fill="var(--magenta)"/></svg><h4 data-ar="القدرات المحلية">Local capability</h4><p data-ar="يعمل برنامج CyberIC والأكاديمية الوطنية للأمن السيبراني على توطين التقنية والمهارات. والمشغّل الذي يجعل أهداف الدولة خطته ينمو معها.">CyberIC and the National Cybersecurity Academy localise technology and skills. Operators who make the state's objectives their plan grow with it.</p></div>
+        <div class="pillar"><svg class="gem" viewBox="0 0 16 42"><path d="M8 0 16 21 8 42 0 21Z" fill="var(--blue)"/></svg><h3 data-ar="السيادة الرقمية">Digital sovereignty</h3><p data-ar="يبقى الرصد والبيانات والاستجابة داخل المملكة. فمراكز العمليات المحلية وإقامة البيانات وفق سياسات مكتب إدارة البيانات الوطنية هدفٌ وطني، لا ميزةٌ إضافية.">Detection, data and response stay in the Kingdom. In-Kingdom SOCs and NDMO data residency are the national objective, not a feature.</p></div>
+        <div class="pillar"><svg class="gem" viewBox="0 0 16 42"><path d="M8 0 16 21 8 42 0 21Z" fill="var(--cyan)"/></svg><h3 data-ar="الكفاءات السعودية">Saudi talent</h3><p data-ar="يشترط الضابط 1-2-2 من الضوابط الأساسية ECC-2:2024 شغل جميع وظائف الأمن السيبراني بكفاءات سعودية مؤهلة بدوام كامل. فكل مقعد محلل وظيفةٌ وطنية عالية المهارة.">ECC-2:2024 control 1-2-2 requires qualified, full-time Saudi professionals in every cybersecurity role. Every analyst seat is a national high-skill job.</p></div>
+        <div class="pillar"><svg class="gem" viewBox="0 0 16 42"><path d="M8 0 16 21 8 42 0 21Z" fill="var(--violet)"/></svg><h3 data-ar="طلبٌ تفرضه الأنظمة">Mandated demand</h3><p data-ar="تُلزم ضوابط ECC وOTCC وCCC وNCNICC وإطار البنك المركزي السعودي ونظام حماية البيانات الشخصية فئاتٍ محددة بمواعيد محددة. والامتثال يُدقَّق كل عام.">ECC, OTCC, CCC, NCNICC, the SAMA framework and the PDPL each bind a named population by a named date. Compliance is audited, every year.</p></div>
+        <div class="pillar"><svg class="gem" viewBox="0 0 16 42"><path d="M8 0 16 21 8 42 0 21Z" fill="var(--magenta)"/></svg><h3 data-ar="القدرات المحلية">Local capability</h3><p data-ar="يعمل برنامج CyberIC والأكاديمية الوطنية للأمن السيبراني على توطين التقنية والمهارات. والمشغّل الذي يجعل أهداف الدولة خطته ينمو معها.">CyberIC and the National Cybersecurity Academy localise technology and skills. Operators who make the state's objectives their plan grow with it.</p></div>
       </div>
       <div class="chart-card rv">
         <div class="head"><div><div class="label" data-ar="مسار السوق">Market trajectory</div><h3 style="margin-top:8px" data-ar="سوقٌ يتضاعف تقريباً بحلول 2030">A market that roughly doubles by 2030</h3></div></div>
@@ -614,15 +615,15 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
     <div class="journey rv">
       <div class="label" data-ar="المسيرة حتى الآن">The journey so far</div>
       <div class="tl">
-        <div class="m" style="--c:var(--blue)"><div class="y">2017</div><h4 data-ar="تأسيس الهيئة">NCA established</h4><p data-ar="جهةٌ واحدة للضوابط والمعايير وبناء القدرات.">One authority for controls, standards and capability building.</p></div>
-        <div class="m" style="--c:var(--cyan)"><div class="y">2022</div><h4 data-ar="ضوابط الأنظمة التشغيلية">OT controls</h4><p data-ar="ضوابط OTCC-1:2022 تمدّ الحماية إلى الأنظمة التشغيلية والتحكم الصناعي.">OTCC-1:2022 extends the controls to operational technology and industrial systems.</p></div>
-        <div class="m" style="--c:var(--violet)"><div class="y">2024</div><h4 data-ar="إصدار ECC-2">ECC-2 issued</h4><p data-ar="الضوابط الأساسية ECC-2:2024 تحدد 108 ضوابط رئيسة وتجعل الكفاءات السعودية إلزامية في كل وظيفة سيبرانية.">ECC-2:2024 sets 108 main controls and makes Saudi talent mandatory in every cyber role.</p></div>
-        <div class="m" style="--c:var(--magenta)"><div class="y">2025</div><h4 data-ar="القطاع الخاص ضمن النطاق">Private sector in scope</h4><p data-ar="ضوابط NCNICC-1:2025 تُخضع الشركات غير المصنّفة بنيةً حساسة لضوابط الهيئة الإلزامية.">NCNICC-1:2025 brings non-CNI companies under mandatory NCA controls.</p></div>
-        <div class="m" style="--c:var(--tangerine)"><div class="y">2026</div><h4 data-ar="إرشادات أمن الذكاء الاصطناعي">AI security guidance</h4><p data-ar="الهيئة تطرح إرشادات أمن الذكاء الاصطناعي، بما فيه التوليدي والوكيلي، للتشاور.">The NCA consults on AI cybersecurity guidelines covering generative and agentic AI.</p></div>
-        <div class="m" style="--c:var(--lime)"><div class="y">2030</div><h4 data-ar="رؤية 2030">Vision 2030</h4><p data-ar="قطاعٌ سيبراني سيادي بكفاءات سعودية يخدم سوقاً تضاعف حجمه.">A sovereign, Saudi-staffed cyber sector serving a doubled market.</p></div>
+        <div class="m" style="--c:var(--blue)"><div class="y">2017</div><h3 data-ar="تأسيس الهيئة">NCA established</h3><p data-ar="جهةٌ واحدة للضوابط والمعايير وبناء القدرات.">One authority for controls, standards and capability building.</p></div>
+        <div class="m" style="--c:var(--cyan)"><div class="y">2022</div><h3 data-ar="ضوابط الأنظمة التشغيلية">OT controls</h3><p data-ar="ضوابط OTCC-1:2022 تمدّ الحماية إلى الأنظمة التشغيلية والتحكم الصناعي.">OTCC-1:2022 extends the controls to operational technology and industrial systems.</p></div>
+        <div class="m" style="--c:var(--violet)"><div class="y">2024</div><h3 data-ar="إصدار ECC-2">ECC-2 issued</h3><p data-ar="الضوابط الأساسية ECC-2:2024 تحدد 108 ضوابط رئيسة وتجعل الكفاءات السعودية إلزامية في كل وظيفة سيبرانية.">ECC-2:2024 sets 108 main controls and makes Saudi talent mandatory in every cyber role.</p></div>
+        <div class="m" style="--c:var(--magenta)"><div class="y">2025</div><h3 data-ar="القطاع الخاص ضمن النطاق">Private sector in scope</h3><p data-ar="ضوابط NCNICC-1:2025 تُخضع الشركات غير المصنّفة بنيةً حساسة لضوابط الهيئة الإلزامية.">NCNICC-1:2025 brings non-CNI companies under mandatory NCA controls.</p></div>
+        <div class="m" style="--c:var(--tangerine)"><div class="y">2026</div><h3 data-ar="إرشادات أمن الذكاء الاصطناعي">AI security guidance</h3><p data-ar="الهيئة تطرح إرشادات أمن الذكاء الاصطناعي، بما فيه التوليدي والوكيلي، للتشاور.">The NCA consults on AI cybersecurity guidelines covering generative and agentic AI.</p></div>
+        <div class="m" style="--c:var(--lime)"><div class="y">2030</div><h3 data-ar="رؤية 2030">Vision 2030</h3><p data-ar="قطاعٌ سيبراني سيادي بكفاءات سعودية يخدم سوقاً تضاعف حجمه.">A sovereign, Saudi-staffed cyber sector serving a doubled market.</p></div>
       </div>
     </div>
-    <figure class="photo-band rv"><img src="/photos/riyadh-skyline-1376.webp" srcset="/photos/riyadh-skyline-760.webp 760w, /photos/riyadh-skyline-1376.webp 1376w" sizes="(max-width:760px) 100vw, 1200px" width="1376" height="768" alt="Riyadh's skyline at dusk, the King Abdullah Financial District lit against the evening sky" data-alt-ar="أفق الرياض عند الغروب، ومركز الملك عبدالله المالي مضاءً في سماء المساء" loading="lazy" decoding="async"></figure>
+    <figure class="photo-band rv"><img src="/photos/riyadh-skyline-1376.webp" srcset="/photos/riyadh-skyline-480.webp 480w, /photos/riyadh-skyline-760.webp 760w, /photos/riyadh-skyline-1376.webp 1376w" sizes="(max-width:760px) 100vw, 1200px" width="1376" height="768" alt="Riyadh's skyline at dusk, the King Abdullah Financial District lit against the evening sky" data-alt-ar="أفق الرياض عند الغروب، ومركز الملك عبدالله المالي مضاءً في سماء المساء" loading="lazy" decoding="async"></figure>
   </div>
 </section>
 
@@ -648,7 +649,7 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
 <!-- ================= SOC LOOP ================= -->
 <section class="night" id="loop">
   <svg class="bg" id="bgLoop" aria-hidden="true"></svg>
-  <img class="sec-photo" src="/photos/data-hall-1376.webp" srcset="/photos/data-hall-760.webp 760w, /photos/data-hall-1376.webp 1376w" sizes="(max-width:760px) 100vw, 1200px" width="1376" height="768" alt="" loading="lazy" decoding="async">
+  <img class="sec-photo" src="/photos/data-hall-1376.webp" srcset="/photos/data-hall-480.webp 480w, /photos/data-hall-760.webp 760w, /photos/data-hall-1376.webp 1376w" sizes="(max-width:760px) 100vw, 1200px" width="1376" height="768" alt="" loading="lazy" decoding="async">
   <div class="wrap">
     <div class="sec-head rv">
       <div class="label" data-ar="03 · كيف نعمل">03 · How we operate</div>
@@ -831,10 +832,10 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
       </div>
     </div>
     <div class="four">
-      <div class="p rv"><svg width="14" height="36" viewBox="0 0 16 42"><path d="M8 1.5 14.5 21 8 40.5 1.5 21Z" fill="none" stroke="var(--blue)" stroke-width="2.5"/></svg><h4 data-ar="مُهيكَلون">Structured</h4><p data-ar="الدفاع عمارة: متعدد الطبقات، موثّق، قابل للتكرار.">Defence as architecture: layered, documented, repeatable.</p></div>
-      <div class="p rv"><svg width="14" height="36" viewBox="0 0 16 42"><path d="M8 0 16 21 8 42 0 21Z" fill="var(--cyan)"/></svg><h4 data-ar="يقِظون">Vigilant</h4><p data-ar="على مدار الساعة، لكل أصل، ولكل سجلٍّ مهم.">24/7, every asset, every log that matters.</p></div>
-      <div class="p rv"><svg width="14" height="36" viewBox="0 0 16 42"><path d="M8 0 16 21 8 42 0 21Z" fill="var(--night2)"/></svg><h4 data-ar="كتومون">Discreet</h4><p data-ar="بيانات العميل محمية وخاصة وداخل المملكة.">Client data stays protected, private and in the Kingdom.</p></div>
-      <div class="p rv"><svg width="14" height="36" viewBox="0 0 16 42"><path d="M8 0 16 21 8 42 0 21Z" fill="var(--lime)"/></svg><h4 data-ar="مسؤولون">Accountable</h4><p data-ar="محللٌ مسمّى، وزمنٌ مقيس، وحزمةُ أدلة.">A named analyst, a measured time, an evidence pack.</p></div>
+      <div class="p rv"><svg width="14" height="36" viewBox="0 0 16 42"><path d="M8 1.5 14.5 21 8 40.5 1.5 21Z" fill="none" stroke="var(--blue)" stroke-width="2.5"/></svg><h3 data-ar="مُهيكَلون">Structured</h3><p data-ar="الدفاع عمارة: متعدد الطبقات، موثّق، قابل للتكرار.">Defence as architecture: layered, documented, repeatable.</p></div>
+      <div class="p rv"><svg width="14" height="36" viewBox="0 0 16 42"><path d="M8 0 16 21 8 42 0 21Z" fill="var(--cyan)"/></svg><h3 data-ar="يقِظون">Vigilant</h3><p data-ar="على مدار الساعة، لكل أصل، ولكل سجلٍّ مهم.">24/7, every asset, every log that matters.</p></div>
+      <div class="p rv"><svg width="14" height="36" viewBox="0 0 16 42"><path d="M8 0 16 21 8 42 0 21Z" fill="var(--night2)"/></svg><h3 data-ar="كتومون">Discreet</h3><p data-ar="بيانات العميل محمية وخاصة وداخل المملكة.">Client data stays protected, private and in the Kingdom.</p></div>
+      <div class="p rv"><svg width="14" height="36" viewBox="0 0 16 42"><path d="M8 0 16 21 8 42 0 21Z" fill="var(--lime)"/></svg><h3 data-ar="مسؤولون">Accountable</h3><p data-ar="محللٌ مسمّى، وزمنٌ مقيس، وحزمةُ أدلة.">A named analyst, a measured time, an evidence pack.</p></div>
     </div>
     <div class="voice rv">
       <div data-ar="<span>04:12</span> · احتُويت خلال 4 دقائق و12 ثانية. السبب الجذري: حساب خدمة مكشوف."><span>04:12</span> · Contained in 4 minutes 12 seconds. Root cause: exposed service account.</div>
@@ -842,7 +843,7 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
       <div data-ar="<span>ECC-2</span> · 67 من 108 ضوابط مُثبَتة هذا الشهر. 3 فجوات بمسؤولين محددين."><span>ECC-2</span> · 67 of 108 controls evidenced this month. 3 gaps, owners assigned.</div>
     </div>
     <p class="source rv" data-ar="الأمثلة التشغيلية توضيحية.">Operating examples are illustrative.</p>
-    <figure class="photo-band rv"><img src="/photos/lattice-light-1376.webp" srcset="/photos/lattice-light-760.webp 760w, /photos/lattice-light-1376.webp 1376w" sizes="(max-width:760px) 100vw, 1200px" width="1376" height="768" alt="Daylight falling through a geometric lattice screen onto a quiet operations room" data-alt-ar="ضوء النهار يعبر شبكة هندسية إلى غرفة عمليات هادئة" loading="lazy" decoding="async"></figure>
+    <figure class="photo-band rv"><img src="/photos/lattice-light-1376.webp" srcset="/photos/lattice-light-480.webp 480w, /photos/lattice-light-760.webp 760w, /photos/lattice-light-1376.webp 1376w" sizes="(max-width:760px) 100vw, 1200px" width="1376" height="768" alt="Daylight falling through a geometric lattice screen onto a quiet operations room" data-alt-ar="ضوء النهار يعبر شبكة هندسية إلى غرفة عمليات هادئة" loading="lazy" decoding="async"></figure>
   </div>
 </section>
 
@@ -856,11 +857,11 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
       <p class="lead" data-ar="كل مرحلة تُبنى على سابقتها: ننتقل إلى التالية حين تثبت سابقتها في التشغيل الفعلي.">Each stage builds on the one before: we move on when the previous stage is proven in live operation.</p>
     </div>
     <div class="gates">
-      <div class="gatec rv" style="--c:var(--blue);--c2:var(--t-blue)"><div class="g">G1</div><h4 data-ar="التأسيس">Establish</h4><p data-ar="التأسيس والسجل التجاري وقيادة مسمّاة.">Incorporation, commercial registration and named leadership.</p><div class="ev" data-ar="المؤشر: الشركة مسجّلة · الفريق القيادي مكتمل">Milestone: company registered · leadership in place</div></div>
-      <div class="gatec rv" style="--c:var(--cyan);--c2:var(--t-cyan)"><div class="g">G2</div><h4 data-ar="بناء المنصة">Build the platform</h4><p data-ar="مركز عمليات ومنصة بيانات داخل المملكة، وفريق محللين سعوديين مؤهلين.">In-Kingdom SOC, data platform and a qualified Saudi analyst bench.</p><div class="ev" data-ar="المؤشر: المنصة قائمة · المحللون على رأس العمل">Milestone: platform live · analysts onboarded</div></div>
-      <div class="gatec rv" style="--c:var(--violet);--c2:var(--t-violet)"><div class="g">G3</div><h4 data-ar="التشغيل على مدار الساعة">Operate 24/7</h4><p data-ar="عمليات قائمة داخل المملكة على مدار الساعة، مع قياس الأتمتة وأزمنة الاستجابة.">In-Kingdom operations live around the clock, with automation and response times measured.</p><div class="ev" data-ar="المؤشر: تشغيل على مدار الساعة">Milestone: 24/7 operations live</div></div>
-      <div class="gatec rv" style="--c:var(--magenta);--c2:var(--t-magenta)"><div class="g">G4</div><h4 data-ar="التوسع">Scale</h4><p data-ar="توسيع خطوط الخدمة والقطاعات بعد إثبات العمليات على نطاق واسع.">Expand service lines and sectors once operations are proven at scale.</p><div class="ev" data-ar="المؤشر: رضا العملاء وجودة الخدمة">Milestone: client retention and service quality</div></div>
-      <div class="gatec rv" style="--c:var(--lime);--c2:var(--t-lime)"><div class="g">G5</div><h4 data-ar="الانتشار الوطني">National scale</h4><p data-ar="مشغّل وطني على مدار الساعة يخدم مؤسسات المملكة الخاضعة للتنظيم في مختلف القطاعات.">A national 24/7 operator serving the Kingdom's regulated institutions across sectors.</p><div class="ev" data-ar="المؤشر: قاعدة عملاء متعددة القطاعات">Milestone: multi-sector client base</div></div>
+      <div class="gatec rv" style="--c:var(--blue);--c2:var(--t-blue)"><div class="g">G1</div><h3 data-ar="التأسيس">Establish</h3><p data-ar="التأسيس والسجل التجاري وقيادة مسمّاة.">Incorporation, commercial registration and named leadership.</p><div class="ev" data-ar="المؤشر: الشركة مسجّلة · الفريق القيادي مكتمل">Milestone: company registered · leadership in place</div></div>
+      <div class="gatec rv" style="--c:var(--cyan);--c2:var(--t-cyan)"><div class="g">G2</div><h3 data-ar="بناء المنصة">Build the platform</h3><p data-ar="مركز عمليات ومنصة بيانات داخل المملكة، وفريق محللين سعوديين مؤهلين.">In-Kingdom SOC, data platform and a qualified Saudi analyst bench.</p><div class="ev" data-ar="المؤشر: المنصة قائمة · المحللون على رأس العمل">Milestone: platform live · analysts onboarded</div></div>
+      <div class="gatec rv" style="--c:var(--violet);--c2:var(--t-violet)"><div class="g">G3</div><h3 data-ar="التشغيل على مدار الساعة">Operate 24/7</h3><p data-ar="عمليات قائمة داخل المملكة على مدار الساعة، مع قياس الأتمتة وأزمنة الاستجابة.">In-Kingdom operations live around the clock, with automation and response times measured.</p><div class="ev" data-ar="المؤشر: تشغيل على مدار الساعة">Milestone: 24/7 operations live</div></div>
+      <div class="gatec rv" style="--c:var(--magenta);--c2:var(--t-magenta)"><div class="g">G4</div><h3 data-ar="التوسع">Scale</h3><p data-ar="توسيع خطوط الخدمة والقطاعات بعد إثبات العمليات على نطاق واسع.">Expand service lines and sectors once operations are proven at scale.</p><div class="ev" data-ar="المؤشر: رضا العملاء وجودة الخدمة">Milestone: client retention and service quality</div></div>
+      <div class="gatec rv" style="--c:var(--lime);--c2:var(--t-lime)"><div class="g">G5</div><h3 data-ar="الانتشار الوطني">National scale</h3><p data-ar="مشغّل وطني على مدار الساعة يخدم مؤسسات المملكة الخاضعة للتنظيم في مختلف القطاعات.">A national 24/7 operator serving the Kingdom's regulated institutions across sectors.</p><div class="ev" data-ar="المؤشر: قاعدة عملاء متعددة القطاعات">Milestone: multi-sector client base</div></div>
     </div>
     <div class="talent">
       <div class="t rv"><div class="num">4.8</div><p data-ar="موظفاً لكل مقعد يعمل على مدار الساعة، وهو ما يجعل بناء مركز داخلي مكلفاً.">people for every seat staffed around the clock, which is why an in-house 24/7 centre is costly to build.</p></div>
@@ -869,13 +870,13 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
       <div class="t rv"><div class="num">100%</div><p data-ar="سعوديون في وظائف الأمن السيبراني، كما يشترط الضابط 1-2-2 في ECC-2.">Saudi nationals in cybersecurity roles, as ECC-2 control 1-2-2 requires.</p></div>
     </div>
     <p class="source rv" data-ar="المصادر: الهيئة الوطنية للأمن السيبراني؛ CyberIC؛ الأكاديمية الوطنية للأمن السيبراني.">Sources: NCA; CyberIC; National Cybersecurity Academy.</p>
-    <figure class="photo-band rv"><img src="/photos/soc-fitout-1376.webp" srcset="/photos/soc-fitout-760.webp 760w, /photos/soc-fitout-1376.webp 1376w" sizes="(max-width:760px) 100vw, 1200px" width="1376" height="768" alt="A security operations centre being fitted out, with screens and analyst desks being installed" data-alt-ar="تجهيز مركز عمليات أمنية: تركيب الشاشات ومكاتب المحللين" loading="lazy" decoding="async"></figure>
+    <figure class="photo-band rv"><img src="/photos/soc-fitout-1376.webp" srcset="/photos/soc-fitout-480.webp 480w, /photos/soc-fitout-760.webp 760w, /photos/soc-fitout-1376.webp 1376w" sizes="(max-width:760px) 100vw, 1200px" width="1376" height="768" alt="A security operations centre being fitted out, with screens and analyst desks being installed" data-alt-ar="تجهيز مركز عمليات أمنية: تركيب الشاشات ومكاتب المحللين" loading="lazy" decoding="async"></figure>
   </div>
 </section>
 
 <!-- ================= CTA ================= -->
 <section class="cta night" id="contact">
-  <img class="sec-photo" src="/photos/infrastructure-1376.webp" srcset="/photos/infrastructure-760.webp 760w, /photos/infrastructure-1376.webp 1376w" sizes="(max-width:760px) 100vw, 1200px" width="1376" height="768" alt="" loading="lazy" decoding="async">
+  <img class="sec-photo" src="/photos/infrastructure-1376.webp" srcset="/photos/infrastructure-480.webp 480w, /photos/infrastructure-760.webp 760w, /photos/infrastructure-1376.webp 1376w" sizes="(max-width:760px) 100vw, 1200px" width="1376" height="768" alt="" loading="lazy" decoding="async">
   <svg class="bg" id="ctaLattice" aria-hidden="true" style="opacity:.9"></svg>
   <div class="wrap">
     <div class="label" data-ar="أدخِل الضوء، واحجب الخطر.">Let the light in. Keep the threat out.</div>
@@ -896,9 +897,9 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
         <svg class="logo-svg logo-en" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0.00 -22.50 793.56 145.00" role="img" aria-label="Cyber HAYKALAH"><g transform="translate(31.82 50.00) scale(0.8328)"><path d="M-26.05 19.14L12.46 -82.45L0.30 -87.06L-38.21 14.53Z M-12.46 -82.45L26.05 19.14L38.21 14.53L-0.30 -87.06Z M26.05 -19.14L-12.46 82.45L-0.30 87.06L38.21 -14.53Z M12.46 82.45L-26.05 -19.14L-38.21 -14.53L0.30 87.06Z" fill="#FFFFFF"/><path d="M0 -38.30L14.52 0L0 38.30L-14.52 0Z" fill="#00D1FF"/></g><g transform="translate(97.64 0.00) scale(1.0)" fill="#FFFFFF"><path transform="translate(0 0)" fill-rule="evenodd" d="M24 0H80V20H30L20 30V70L30 80H80V100H24L0 76V24Z"/><path transform="translate(95 0)" fill-rule="evenodd" d="M0 0H21L28.2 19L35.4 0H56.4L38.2 48V100H18.2V48Z"/><path transform="translate(166.4 0)" fill-rule="evenodd" d="M0 0H62L76 14V43L70 50L76 57V86L62 100H0Z M20 20V40H56V20Z M20 60V80H56V60Z"/><path transform="translate(257.4 0)" fill-rule="evenodd" d="M0 0H64V20H20V40H56V60H20V80H64V100H0Z"/><path transform="translate(336.4 0)" fill-rule="evenodd" d="M0 0H62L76 14V44L66 54L80 100H59.5L45 60H20V100H0Z M20 20V40H56V20Z"/></g><rect x="544.04" y="8" width="2.5" height="84" fill="#24305C"/><g transform="translate(574.04 56.00) scale(0.35074)"><path d="M625.87,0.01L598.7,0.01L598.7,65.78L593.81,62.73L564.52,46.74L564.52,0.01L537.36,0.01L537.36,56.68L515.87,0.01L486.83,0.01L439.26,125.45L468.3,125.45L501.34,38.3L534.38,125.45L537.36,125.45L563.43,125.45L564.52,125.45L564.52,78.7L598.7,97.73L598.7,125.45L625.87,125.45L625.87,0.01Z" fill="#0066FF"/><path d="M27.17,0L0,0L0,125.44L27.17,125.44L27.17,0Z" fill="#0066FF"/><path d="M124.53,38.3L110,0L88.51,56.69L88.51,0L61.34,0L61.34,125.44L62.44,125.44L88.51,125.44L91.49,125.44L124.53,38.3Z" fill="#0066FF"/><path d="M368.75,0L339.71,0L292.15,125.45L321.2,125.45L354.23,38.3L387.27,125.45L416.32,125.45L368.75,0Z" fill="#0066FF"/><path d="M243.86,0L214.81,0L167.25,125.44L196.3,125.44L243.86,0Z" fill="#0066FF"/><path d="M425.19,0L398.03,0L398.03,125.45L462.32,125.45L463.16,98.28L425.19,98.28L425.19,0Z" fill="#0066FF"/><path d="M27.16,33.82L0,48.64L0,80.9L27.16,65.77L27.16,33.82Z" fill="#1D1D1B" fill-opacity="0.3"/><path d="M598.7,33.82L598.7,65.77L625.87,80.9L625.87,48.64L598.7,33.82Z" fill="#1D1D1B" fill-opacity="0.3"/><path d="M110,0L95.49,38.29L110.01,76.59L124.53,38.3L110,0Z" fill="#1D1D1B" fill-opacity="0.3"/><path d="M339.71,0L325.2,38.29L339.72,76.59L354.23,38.3L339.71,0Z" fill="#1D1D1B" fill-opacity="0.3"/><path d="M486.83,0L472.32,38.29L486.84,76.59L501.35,38.3L486.83,0Z" fill="#1D1D1B" fill-opacity="0.3"/><path d="M214.81,0L200.3,38.29L214.82,76.59L229.34,38.3L214.81,0Z" fill="#1D1D1B" fill-opacity="0.3"/><path d="M61.34,46.74L32.06,62.72L27.17,65.77L27.17,97.73L61.34,78.69L61.34,46.74Z" fill="#0066FF"/><path d="M186.61,125.44L139.04,0L110,0L157.56,125.44L186.61,125.44Z" fill="#0066FF"/><path d="M200.64,37.38L186.46,0L157.42,0L186.12,75.68L200.64,37.38Z" fill="#0066FF"/><path d="M251.8,0L224.65,0L224.65,125.44L251.8,125.44L251.8,83.99L269.23,63.16L269.07,62.72L298.12,62.72L290.13,41.67L251.8,41.67L251.8,0Z" fill="#0066FF"/><path d="M298.12,62.72L269.6,62.72L269.23,63.16L292.85,125.44L321.9,125.44L298.12,62.72Z" fill="#0066FF"/><path d="M321.89,0L286.68,0L251.8,41.67L290.13,41.67L289.22,39.28L321.89,0.25L321.89,0Z" fill="#0066FF"/></g></svg><svg class="logo-svg logo-ar" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0.00 -40.00 570.40 185.00" role="img" aria-label="سايبر هيكلة"><g transform="translate(0.00 92.00) scale(0.62)"><path d="M26.0 -2.5Q19.1 -2.5 13.75 -4.5Q8.4 -6.5 5.3500000000000005 -10.3Q2.3000000000000003 -14.100000000000001 2.3000000000000003 -19.400000000000002Q2.3000000000000003 -24.3 4.75 -28.200000000000003Q7.2 -32.1 11.9 -35.400000000000006Q16.6 -38.7 23.25 -41.7Q29.900000000000002 -44.7 38.1 -47.900000000000006L40.300000000000004 -33.800000000000004Q33.2 -31.700000000000003 28.550000000000004 -29.800000000000004Q23.900000000000002 -27.900000000000002 21.25 -26.150000000000002Q18.6 -24.400000000000002 17.55 -22.900000000000002Q16.5 -21.400000000000002 16.5 -20.1Q16.5 -18.400000000000002 18.55 -17.35Q20.6 -16.3 25.6 -16.3Q26.8 -16.3 28.75 -16.4Q30.700000000000003 -16.5 33.1 -16.9Q35.5 -17.3 38.2 -18.0L41.400000000000006 -6.1000000000000005Q37.5 -4.3 34.0 -3.4Q30.5 -2.5 26.0 -2.5ZM50.800000000000004 0.0Q44.800000000000004 0.0 41.1 -1.6Q37.4 -3.2 35.45 -5.800000000000001Q33.5 -8.4 32.85 -11.5Q32.2 -14.600000000000001 32.2 -17.6V-53.1H46.400000000000006V-21.5Q46.400000000000006 -17.3 48.300000000000004 -15.600000000000001Q50.2 -13.9 55.1 -13.9H58.6V0.0ZM18.6 -58.8 8.9 -68.60000000000001 18.0 -78.4 27.700000000000003 -68.60000000000001ZM36.0 -58.8 26.300000000000004 -68.60000000000001 35.6 -78.4 45.300000000000004 -68.60000000000001Z M80.4 -13.9H92.4V0.0H80.4ZM58.6 0.0V-13.9H69.2V-74.0H83.4V0.0ZM58.6 -13.9H59.6V0.0H58.6Q55.6 0.0 55.6 -7.0Q55.6 -13.9 58.6 -13.9Z M133.70000000000002 -18.6Q136.8 -15.700000000000001 140.65 -14.8Q144.5 -13.9 148.9 -13.9V0.0Q143.10000000000002 0.0 137.65000000000003 -2.4000000000000004Q132.20000000000002 -4.800000000000001 128.8 -10.3ZM98.80000000000001 -52.400000000000006 127.5 -76.2 136.70000000000002 -65.2 108.2 -41.6 110.30000000000001 -47.2Q122.2 -43.800000000000004 128.65 -37.150000000000006Q135.10000000000002 -30.5 136.95000000000002 -21.1Q138.8 -11.700000000000001 136.9 0.0H92.4V-13.9H124.70000000000002Q123.80000000000001 -19.1 120.85000000000001 -23.6Q117.9 -28.1 112.55000000000001 -31.450000000000003Q107.2 -34.800000000000004 98.80000000000001 -36.4ZM92.4 -13.9H93.4V0.0H92.4Q89.4 0.0 89.4 -7.0Q89.4 -13.9 92.4 -13.9Z M148.9 0.0V-13.9H162.20000000000002Q162.8 -15.5 163.3 -18.5Q163.8 -21.5 164.15 -24.75Q164.5 -28.0 164.5 -30.400000000000002L181.10000000000002 -36.2Q179.4 -29.0 177.7 -22.9Q176.0 -16.8 173.65 -11.25Q171.3 -5.7 167.70000000000002 0.0ZM188.10000000000002 0.0Q181.70000000000002 0.0 177.15000000000003 -1.25Q172.60000000000002 -2.5 169.45000000000002 -4.25Q166.3 -6.0 163.9 -7.6000000000000005L171.4 -16.5Q173.0 -15.600000000000001 175.0 -15.05Q177.0 -14.5 179.45 -14.2Q181.9 -13.9 184.5 -13.9H188.4V0.0ZM148.9 -13.9H149.9V0.0H148.9Q145.9 0.0 145.9 -7.0Q145.9 -13.9 148.9 -13.9ZM159.8 26.0 150.10000000000002 16.2 159.20000000000002 6.4 168.9 16.2ZM177.20000000000002 26.0 167.5 16.2 176.8 6.4 186.5 16.2Z M188.4 0.0V-13.9H191.8Q192.8 -13.9 193.7 -13.9Q194.6 -13.9 195.6 -13.850000000000001Q196.6 -13.8 197.70000000000002 -13.8Q197.3 -14.9 196.95 -16.650000000000002Q196.6 -18.400000000000002 196.6 -20.400000000000002Q196.6 -24.700000000000003 198.4 -28.0Q200.20000000000002 -31.3 203.60000000000002 -33.2Q207.0 -35.1 211.8 -35.1Q216.70000000000002 -35.1 220.05 -33.2Q223.4 -31.3 225.2 -28.0Q227.0 -24.700000000000003 227.0 -20.400000000000002Q227.0 -18.400000000000002 226.7 -16.650000000000002Q226.4 -14.9 225.9 -13.8Q227.8 -13.8 229.25 -13.850000000000001Q230.70000000000002 -13.9 231.75 -13.9Q232.8 -13.9 233.5 -13.9H236.4Q235.9 -21.6 233.10000000000002 -27.1Q230.3 -32.6 225.3 -36.0Q220.3 -39.400000000000006 213.05 -40.75Q205.8 -42.1 196.4 -41.6L197.5 -55.6Q211.0 -55.900000000000006 221.45 -53.050000000000004Q231.9 -50.2 238.60000000000002 -43.6Q245.3 -37.0 247.65 -26.25Q250.0 -15.5 247.5 0.0H230.3Q225.10000000000002 0.0 220.5 -0.55Q215.9 -1.1 212.10000000000002 -2.3000000000000003Q208.10000000000002 -1.1 202.85000000000002 -0.55Q197.6 0.0 191.9 0.0ZM211.8 -12.9Q213.4 -13.600000000000001 214.35000000000002 -15.3Q215.3 -17.0 215.3 -19.5Q215.3 -21.900000000000002 214.35000000000002 -23.200000000000003Q213.4 -24.5 211.8 -24.5Q210.3 -24.5 209.25 -23.200000000000003Q208.20000000000002 -21.900000000000002 208.20000000000002 -19.5Q208.20000000000002 -17.0 209.20000000000002 -15.3Q210.20000000000002 -13.600000000000001 211.8 -12.9ZM188.4 -13.9H189.4V0.0H188.4Q185.4 0.0 185.4 -7.0Q185.4 -13.9 188.4 -13.9Z" fill="#C9CEDB"/></g><rect x="186.86" y="8" width="2.5" height="84" fill="#24305C"/><g transform="translate(219.36 100.00) scale(1.0)"><path d="M10.700000000000001 25.6Q6.2 25.6 0.75 23.6Q-4.7 21.6 -9.1 17.900000000000002L-4.1000000000000005 7.800000000000001Q-0.1 9.0 2.6000000000000005 9.45Q5.300000000000001 9.9 7.7 9.9Q13.100000000000001 9.9 17.25 7.8500000000000005Q21.400000000000002 5.800000000000001 23.75 2.3000000000000003Q26.1 -1.2000000000000002 26.1 -5.300000000000001Q26.1 -8.700000000000001 25.05 -11.05Q24.0 -13.4 22.35 -15.55Q20.700000000000003 -17.7 18.8 -20.5L40.300000000000004 -10.100000000000001Q40.300000000000004 -8.9 40.300000000000004 -7.7Q40.300000000000004 -6.5 40.300000000000004 -5.300000000000001Q40.300000000000004 -2.3000000000000003 39.35000000000001 1.7Q38.400000000000006 5.7 36.300000000000004 9.85Q34.2 14.0 30.75 17.6Q27.3 21.200000000000003 22.35 23.400000000000002Q17.400000000000002 25.6 10.700000000000001 25.6ZM48.2 0.0Q44.6 0.0 41.45 -0.65Q38.300000000000004 -1.3 35.550000000000004 -2.7Q32.800000000000004 -4.1000000000000005 30.35 -6.300000000000001Q27.900000000000002 -8.5 25.5 -11.600000000000001L12.5 -28.3L25.3 -44.0L37.9 -22.0Q39.300000000000004 -19.6 40.5 -18.200000000000003Q41.7 -16.8 43.45 -16.25Q45.2 -15.700000000000001 48.2 -15.700000000000001H49.2V0.0Z M49.2 0.0V-15.700000000000001H63.1Q63.5 -17.400000000000002 63.800000000000004 -20.300000000000004Q64.10000000000001 -23.200000000000003 64.30000000000001 -26.150000000000002Q64.5 -29.1 64.4 -31.1L83.2 -37.7Q81.4 -30.400000000000002 79.65 -24.05Q77.9 -17.7 75.55000000000001 -11.85Q73.2 -6.0 69.5 0.0ZM90.2 0.0Q83.30000000000001 0.0 78.55000000000001 -1.35Q73.80000000000001 -2.7 70.60000000000001 -4.550000000000001Q67.4 -6.4 65.10000000000001 -8.0L73.60000000000001 -17.900000000000002Q75.0 -17.2 76.9 -16.7Q78.80000000000001 -16.2 81.10000000000001 -15.95Q83.4 -15.700000000000001 85.9 -15.700000000000001H90.2V0.0ZM49.2 -15.700000000000001H50.2V0.0H49.2Q46.2 0.0 46.2 -7.800000000000001Q46.2 -15.700000000000001 49.2 -15.700000000000001ZM69.30000000000001 26.900000000000002 58.7 16.2 68.80000000000001 5.6000000000000005 79.30000000000001 16.2Z M90.2 0.0V-15.700000000000001H109.80000000000001Q109.0 -19.200000000000003 106.7 -23.5Q104.4 -27.8 100.9 -32.2L115.30000000000001 -46.900000000000006Q118.30000000000001 -41.2 120.5 -34.400000000000006Q122.7 -27.6 122.7 -19.150000000000002Q122.7 -10.700000000000001 119.0 0.0ZM90.2 -15.700000000000001H91.2V0.0H90.2Q87.2 0.0 87.2 -7.800000000000001Q87.2 -15.700000000000001 90.2 -15.700000000000001ZM101.00000000000001 26.900000000000002 90.50000000000001 16.2 100.4 5.6000000000000005 110.9 16.2ZM118.60000000000001 26.900000000000002 108.10000000000001 16.2 118.10000000000001 5.6000000000000005 128.60000000000002 16.2Z M154.6 0.0Q149.6 0.0 146.0 -1.0Q142.4 -2.0 140.05 -4.15Q137.7 -6.300000000000001 136.55 -9.700000000000001Q135.4 -13.100000000000001 135.4 -17.900000000000002V-74.0H151.5V-23.700000000000003Q151.5 -21.5 151.8 -19.950000000000003Q152.1 -18.400000000000002 152.89999999999998 -17.450000000000003Q153.7 -16.5 155.14999999999998 -16.1Q156.6 -15.700000000000001 159.0 -15.700000000000001H162.9V0.0Z M230.3 0.0Q223.4 0.0 218.65 -1.35Q213.9 -2.7 210.7 -4.550000000000001Q207.5 -6.4 205.20000000000002 -8.0L214.10000000000002 -17.6Q215.9 -16.8 219.05 -16.25Q222.20000000000002 -15.700000000000001 226.0 -15.700000000000001H238.3Q237.10000000000002 -20.200000000000003 234.85000000000002 -24.450000000000003Q232.60000000000002 -28.700000000000003 229.7 -32.4L244.10000000000002 -47.0Q246.4 -42.800000000000004 248.3 -37.95Q250.20000000000002 -33.1 251.05 -27.450000000000003Q251.9 -21.8 251.2 -15.0Q250.5 -8.200000000000001 247.60000000000002 0.0ZM162.9 0.0V-15.700000000000001H172.5Q172.8 -17.8 172.95 -20.0Q173.1 -22.200000000000003 173.1 -24.700000000000003Q173.1 -27.200000000000003 172.8 -30.1L191.70000000000002 -36.6Q190.3 -29.6 189.0 -24.700000000000003Q187.70000000000002 -19.8 186.15000000000003 -16.0Q184.60000000000002 -12.200000000000001 182.45000000000002 -8.5Q180.3 -4.800000000000001 177.1 0.0ZM193.9 0.0Q186.4 0.0 181.2 -1.35Q176.0 -2.7 172.95 -4.45Q169.9 -6.2 168.70000000000002 -7.300000000000001L174.6 -19.0Q177.1 -17.400000000000002 180.8 -16.55Q184.5 -15.700000000000001 188.9 -15.700000000000001H201.0Q201.3 -17.2 201.45000000000002 -19.450000000000003Q201.60000000000002 -21.700000000000003 201.60000000000002 -24.450000000000003Q201.60000000000002 -27.200000000000003 201.3 -30.1L220.4 -36.6Q218.9 -29.6 217.60000000000002 -24.700000000000003Q216.3 -19.8 214.70000000000002 -16.0Q213.10000000000002 -12.200000000000001 210.95000000000002 -8.5Q208.8 -4.800000000000001 205.70000000000002 0.0ZM162.9 -15.700000000000001H163.9V0.0H162.9Q159.9 0.0 159.9 -7.800000000000001Q159.9 -15.700000000000001 162.9 -15.700000000000001Z" fill="#FFFFFF"/></g><g transform="translate(538.58 50.00) scale(0.8328)"><path d="M-26.05 19.14L12.46 -82.45L0.30 -87.06L-38.21 14.53Z M-12.46 -82.45L26.05 19.14L38.21 14.53L-0.30 -87.06Z M26.05 -19.14L-12.46 82.45L-0.30 87.06L38.21 -14.53Z M12.46 82.45L-26.05 -19.14L-38.21 -14.53L0.30 87.06Z" fill="#FFFFFF"/><path d="M0 -38.30L14.52 0L0 38.30L-14.52 0Z" fill="#00D1FF"/></g></svg>
         <p style="max-width:380px" data-ar="سايبر هيكلة، إحدى شركات هيكلة، قيد التأسيس لتشغيل العمليات الأمنية لعملاء القطاع المالي والمنشآت والقطاع الخاص في المملكة العربية السعودية. الرياض · جدة.">Cyber HAYKALAH, a HAYKALAH company, is being established to run security operations for financial, enterprise and private-sector clients in Saudi Arabia. Riyadh · Jeddah.</p>
       </div>
-      <div><h5 data-ar="استكشف">Explore</h5><ul><li><a href="#vision" data-ar="الرؤية الوطنية">National vision</a></li><li><a href="#services" data-ar="الخدمات">Services</a></li><li><a href="#dashboard" data-ar="لوحة العمليات">SOC dashboard</a></li><li><a href="#assessment" data-ar="النضج والتقييم">Maturity &amp; assessment</a></li></ul></div>
-      <div><h5 data-ar="الخدمات">Services</h5><ul><li><a href="/services/managed-soc-mdr/" data-ar="مركز العمليات المُدار">Managed SOC &amp; MDR</a></li><li><a href="/services/ecc-2-compliance/" data-ar="الامتثال لـ ECC-2">ECC-2 compliance</a></li><li><a href="/services/sama-csf/" data-ar="إطار البنك المركزي">SAMA CSF</a></li><li><a href="/services/incident-response/" data-ar="الاستجابة للحوادث">Incident response</a></li><li><a href="/services/penetration-testing/" data-ar="اختبار الاختراق">Penetration testing</a></li><li><a href="/services/cloud-security/" data-ar="أمن السحابة">Cloud security</a></li><li><a href="/services/ncnicc-compliance/" data-ar="ضوابط NCNICC">NCNICC compliance</a></li></ul></div>
-      <div><h5 data-ar="الشركة">Company</h5><ul><li><a href="#why" data-ar="لماذا سايبر هيكلة">Why Cyber HAYKALAH</a></li><li><a href="#roadmap" data-ar="خارطة الطريق">Roadmap</a></li><li><a href="mailto:cyber@haykalah.com" data-ar="تواصل معنا">Contact</a></li><li><a href="https://cybrhyk.com/">cybrhyk.com</a></li><li><a href="mailto:cyber@haykalah.com">cyber@haykalah.com</a></li><li data-ar="السجل التجاري لهيكلة 7014123751">HAYKALAH CR 7014123751</li></ul></div>
+      <div><h2 class="fh" data-ar="استكشف">Explore</h2><ul><li><a href="#vision" data-ar="الرؤية الوطنية">National vision</a></li><li><a href="#services" data-ar="الخدمات">Services</a></li><li><a href="#dashboard" data-ar="لوحة العمليات">SOC dashboard</a></li><li><a href="#assessment" data-ar="النضج والتقييم">Maturity &amp; assessment</a></li></ul></div>
+      <div><h2 class="fh" data-ar="الخدمات">Services</h2><ul><li><a href="/services/managed-soc-mdr/" data-ar="مركز العمليات المُدار">Managed SOC &amp; MDR</a></li><li><a href="/services/ecc-2-compliance/" data-ar="الامتثال لـ ECC-2">ECC-2 compliance</a></li><li><a href="/services/sama-csf/" data-ar="إطار البنك المركزي">SAMA CSF</a></li><li><a href="/services/incident-response/" data-ar="الاستجابة للحوادث">Incident response</a></li><li><a href="/services/penetration-testing/" data-ar="اختبار الاختراق">Penetration testing</a></li><li><a href="/services/cloud-security/" data-ar="أمن السحابة">Cloud security</a></li><li><a href="/services/ncnicc-compliance/" data-ar="ضوابط NCNICC">NCNICC compliance</a></li></ul></div>
+      <div><h2 class="fh" data-ar="الشركة">Company</h2><ul><li><a href="#why" data-ar="لماذا سايبر هيكلة">Why Cyber HAYKALAH</a></li><li><a href="#roadmap" data-ar="خارطة الطريق">Roadmap</a></li><li><a href="mailto:cyber@haykalah.com" data-ar="تواصل معنا">Contact</a></li><li><a href="https://cybrhyk.com/">cybrhyk.com</a></li><li><a href="mailto:cyber@haykalah.com">cyber@haykalah.com</a></li><li data-ar="السجل التجاري لهيكلة 7014123751">HAYKALAH CR 7014123751</li></ul></div>
     </div>
     <div class="disclaimer" data-ar="© 2026 سايبر هيكلة · cybrhyk.com · أرقام السوق والخطة استرشادية. بيانات اللوحة والتقييم توضيحية. الصور توضيحية مولّدة بالذكاء الاصطناعي.">© 2026 Cyber HAYKALAH · cybrhyk.com · Market and plan figures are indicative. Dashboard and assessment data are illustrative. Photographs are AI-generated illustrations.</div>
   </div>
@@ -919,8 +920,9 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
   function size(svg){const w=svg.clientWidth||svg.parentNode.clientWidth, h=svg.clientHeight||svg.parentNode.clientHeight;svg.setAttribute("viewBox",`0 0 ${w} ${h}`);return [w,h]}
 
   /* ---------- lattice ---------- */
+  const MOB=()=>innerWidth<720, dens=n=>MOB()?Math.round(n*.55):n;
   function lattice(svg,opt){
-    const [w,h]=size(svg), a=opt.a, b=a*R, flip=opt.mirror&&ar();
+    const [w,h]=size(svg), a=opt.a*(MOB()?1.45:1), b=a*R, flip=opt.mirror&&ar();
     const cols=Math.ceil(w/(2*a))+2, rows=Math.ceil(h/b)+2; let s="";
     for(let j=0;j<rows;j++)for(let i=-1;i<cols;i++){
       const cx=2*a*i+(j%2?a:0), cy=b*j, x=flip?1-cx/w:cx/w;
@@ -935,7 +937,7 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
   /* ---------- generated tech/cyber backgrounds ---------- */
   function circuit(svg,o){
     const [w,h]=size(svg), st=o.step||36; let s="";
-    for(let n=0;n<o.n;n++){
+    for(let n=0;n<dens(o.n);n++){
       let x=Math.round(rnd()*w/st)*st, y=Math.round(rnd()*h/st)*st, d=`M${x} ${y}`;
       const segs=3+Math.floor(rnd()*4);
       for(let k=0;k<segs;k++){const len=st*(1+Math.floor(rnd()*4));
@@ -953,7 +955,7 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
   }
   function network(svg,o){
     const [w,h]=size(svg), pts=[]; let s="";
-    for(let n=0;n<o.n;n++){const bias=ar()?1-Math.pow(rnd(),.6):Math.pow(rnd(),.6);pts.push([bias*w,rnd()*h])}
+    for(let n=0;n<dens(o.n);n++){const bias=ar()?1-Math.pow(rnd(),.6):Math.pow(rnd(),.6);pts.push([bias*w,rnd()*h])}
     pts.forEach((p,i)=>{const near=pts.map((q,j)=>[j,(q[0]-p[0])**2+(q[1]-p[1])**2]).sort((a,b)=>a[1]-b[1]).slice(1,3);
       near.forEach(([j])=>{if(j>i)s+=`<line x1="${p[0]}" y1="${p[1]}" x2="${pts[j][0]}" y2="${pts[j][1]}" stroke="${o.c}" stroke-opacity="${o.op}" stroke-width="1"/>`})});
     pts.forEach(p=>{const lit=rnd()<.18;
@@ -973,7 +975,7 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
     const [w,h]=size(svg), hz=h*o.hz, vx=w/2; let s=`<defs><linearGradient id="fl${svg.id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${o.c}" stop-opacity="0"/><stop offset="1" stop-color="${o.c}" stop-opacity="${o.op}"/></linearGradient></defs>`;
     for(let k=-24;k<=24;k++){s+=`<line x1="${vx+k*14}" y1="${hz}" x2="${vx+k*(w/10)}" y2="${h}" stroke="url(#fl${svg.id})"/>`}
     for(let k=1;k<16;k++){const y=hz+(h-hz)*Math.pow(k/15,2.1);s+=`<line x1="0" y1="${y}" x2="${w}" y2="${y}" stroke="${o.c}" stroke-opacity="${o.op*(k/15)}"/>`}
-    for(let k=0;k<o.towers;k++){const x=rnd()*w, bw=10+rnd()*26, bh=30+rnd()*Math.min(hz*.9,240);s+=`<rect x="${x}" y="${hz-bh}" width="${bw}" height="${bh}" fill="none" stroke="${o.c}" stroke-opacity="${o.op*.9}"/>`;
+    for(let k=0;k<dens(o.towers);k++){const x=rnd()*w, bw=10+rnd()*26, bh=30+rnd()*Math.min(hz*.9,240);s+=`<rect x="${x}" y="${hz-bh}" width="${bw}" height="${bh}" fill="none" stroke="${o.c}" stroke-opacity="${o.op*.9}"/>`;
       for(let r=hz-bh+8;r<hz-6;r+=10)if(rnd()<.18)s+=`<rect x="${x+3}" y="${r}" width="${bw-6}" height="3" fill="${o.hi}" class="lit-cell" style="--d:${(6+rnd()*4).toFixed(1)}s;--dl:-${(rnd()*9).toFixed(1)}s;--o1:.8;--o2:.15"/>`}
     svg.innerHTML=s;
   }
@@ -985,20 +987,30 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
     svg.innerHTML=s;
   }
 
+  // The hero backgrounds draw at once; the others when their section comes within 600px of the screen, and redrawn on resize.
+  const BG=[
+    ["heroLattice",7,s=>lattice(s,{a:15,unlit:"#ECE8DF",colors:SPEC,mirror:true,litFn:(x,y)=>rnd()<(0.05+0.22*x*(1-y*.5))})],
+    ["bgHero",11,s=>circuit(s,{n:26,chips:3,c:"#0066FF",hi:"#00D1FF",op:.10})],
+    ["bgVision",13,s=>network(s,{n:70,c:"#0066FF",op:.16})],
+    ["bgReg",15,s=>circuit(s,{n:40,chips:6,c:"#0066FF",hi:"#00A8E8",op:.13})],
+    ["bgLoop",19,s=>rings(s,{cy:.5,c:"#3D5AB5",hi:"#00D1FF",op:.22,blips:22,sweep:true})],
+    ["bgSvc",23,s=>circuit(s,{n:34,chips:5,c:"#8B5CFF",hi:"#0066FF",op:.10})],
+    ["bgDash",25,s=>floor(s,{hz:.3,c:"#3D5AB5",hi:"#00D1FF",op:.4,towers:22})],
+    ["bgComp",27,s=>network(s,{n:60,c:"#8B5CFF",op:.14})],
+    ["bgAssess",29,s=>topo(s,{n:22,c:"#0066FF",hi:"#00A8E8",op:.10})],
+    ["bgWhy",31,s=>lattice(s,{a:13,unlit:"transparent",stroke:"#E2DED4",colors:["#00D1FF"],lit:.06,mirror:true})],
+    ["bgRoad",35,s=>floor(s,{hz:.55,c:"#0066FF",hi:"#00D1FF",op:.22,towers:18})],
+    ["ctaLattice",33,s=>lattice(s,{a:16,unlit:"#111C42",colors:SPEC,mirror:true,litFn:(x,y)=>rnd()<(0.02+0.2*x)})]
+  ];
+  let bgio;
   function drawAll(){
-    seed=7; lattice($("heroLattice"),{a:15,unlit:"#ECE8DF",colors:SPEC,mirror:true,litFn:(x,y)=>rnd()<(0.05+0.22*x*(1-y*.5))});
-    seed=11; circuit($("bgHero"),{n:26,chips:3,c:"#0066FF",hi:"#00D1FF",op:.10});
-    seed=13; network($("bgVision"),{n:70,c:"#0066FF",op:.16});
-    seed=15; circuit($("bgReg"),{n:40,chips:6,c:"#0066FF",hi:"#00A8E8",op:.13});
-    seed=19; rings($("bgLoop"),{cy:.5,c:"#3D5AB5",hi:"#00D1FF",op:.22,blips:22,sweep:true});
-    seed=23; circuit($("bgSvc"),{n:34,chips:5,c:"#8B5CFF",hi:"#0066FF",op:.10});
-    seed=25; floor($("bgDash"),{hz:.3,c:"#3D5AB5",hi:"#00D1FF",op:.4,towers:22});
-    seed=27; network($("bgComp"),{n:60,c:"#8B5CFF",op:.14});
-    seed=29; topo($("bgAssess"),{n:22,c:"#0066FF",hi:"#00A8E8",op:.10});
-    seed=31; lattice($("bgWhy"),{a:13,unlit:"transparent",stroke:"#E2DED4",colors:["#00D1FF"],lit:.06,mirror:true});
-    seed=35; floor($("bgRoad"),{hz:.55,c:"#0066FF",hi:"#00D1FF",op:.22,towers:18});
-    seed=33; lattice($("ctaLattice"),{a:16,unlit:"#111C42",colors:SPEC,mirror:true,litFn:(x,y)=>rnd()<(0.02+0.2*x)});
+    if(bgio)bgio.disconnect();
+    bgio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const d=BG.find(x=>x[0]===e.target.id);seed=d[1];d[2](e.target);bgio.unobserve(e.target)}),{rootMargin:"600px 0px"});
+    BG.forEach(d=>{const el=$(d[0]);if(!el)return;el.innerHTML="";if(/^(heroLattice|bgHero)$/.test(d[0])){seed=d[1];d[2](el)}else bgio.observe(el)});
   }
+  // pause the looping background animations of sections that are off screen
+  const offio=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle("off",!e.isIntersecting)));
+  document.querySelectorAll("header.hero, section").forEach(s=>offio.observe(s));
   let rt, lw=innerWidth; addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{if(Math.abs(innerWidth-lw)>40){lw=innerWidth;drawAll();renderAsset()}},250)});
 
   /* nav, reveals and section motion live in motion.js (shared with the service pages) */
@@ -1038,7 +1050,7 @@ footer{background:var(--night);color:var(--muted-n);border-top:1px solid var(--l
   const SL={force:["In force","سارٍ","st-force"],draft:["Draft","مسودة","st-draft"],notified:["As notified","كما أُعلن","st-notified"]};
   const rg=$("regGrid"); let regFilter="all";
   function renderReg(){
-    rg.innerHTML=REG.map(r=>`<article class="reg" data-f="${r.f}"><div class="top"><span class="code">${L(r,"c")}</span><span class="status ${SL[r.s][2]}">${SL[r.s][ar()?1:0]}</span></div><h4>${L(r,"t")}</h4><div class="figure">${L(r,"fig")}<small>${L(r,"u")}</small></div><p>${L(r,"p")}</p><div class="who"><b>${ar()?"يُلزم:":"Binds:"}</b> ${L(r,"w")}</div></article>`).join("");
+    rg.innerHTML=REG.map(r=>`<article class="reg" data-f="${r.f}"><div class="top"><span class="code">${L(r,"c")}</span><span class="status ${SL[r.s][2]}">${SL[r.s][ar()?1:0]}</span></div><h3>${L(r,"t")}</h3><div class="figure">${L(r,"fig")}<small>${L(r,"u")}</small></div><p>${L(r,"p")}</p><div class="who"><b>${ar()?"يُلزم:":"Binds:"}</b> ${L(r,"w")}</div></article>`).join("");
     applyRegFilter();
   }
   function applyRegFilter(){rg.querySelectorAll(".reg").forEach(c=>c.classList.toggle("dim",regFilter!=="all"&&c.dataset.f!==regFilter))}

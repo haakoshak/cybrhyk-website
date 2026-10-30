@@ -147,7 +147,7 @@ const PHOTO = {
   "cloud-security": ["cloud-datacentre", "A cloud security engineer checking configuration on a tablet between server racks in an in-Kingdom data centre", "مهندس أمن سحابي يراجع الإعدادات على جهاز لوحي بين خزائن الخوادم في مركز بيانات داخل المملكة"],
   "ncnicc-compliance": ["ncnicc-control-room", "An operations engineer and a cyber compliance specialist reviewing plant control systems in a critical infrastructure control room", "مهندس تشغيل ومختصة امتثال سيبراني يراجعان أنظمة التحكم في غرفة تحكم لمنشأة بنية تحتية حساسة"]
 };
-const lpPhoto = (slug, lang) => { const [f, en, ar] = PHOTO[slug]; return `<figure class="lp-photo"><img src="/photos/${f}-1376.webp" srcset="/photos/${f}-760.webp 760w, /photos/${f}-1376.webp 1376w" sizes="(max-width:1024px) 100vw, 560px" width="1376" height="768" alt="${esc(lang === "ar" ? ar : en)}" fetchpriority="high" decoding="async"></figure>`; };
+const lpPhoto = (slug, lang) => { const [f, en, ar] = PHOTO[slug]; return `<figure class="lp-photo"><img src="/photos/${f}-1376.webp" srcset="/photos/${f}-480.webp 480w, /photos/${f}-760.webp 760w, /photos/${f}-1376.webp 1376w" sizes="(max-width:1024px) 100vw, 560px" width="1376" height="768" alt="${esc(lang === "ar" ? ar : en)}" fetchpriority="high" decoding="async"></figure>`; };
 // Static vector backgrounds (no runtime script needed on these pages).
 function circuitSvg(seed, color) {
   let s = seed; const r = () => { s = (s * 16807) % 2147483647; return (s - 1) / 2147483646 };
@@ -198,7 +198,7 @@ ${head({ lang, title: t.title, desc: t.desc, enPath: lpPath("en", page.slug), ar
 <script>document.documentElement.classList.add("js")</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Readex+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Readex+Pro:wght@400;600&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Readex+Pro:wght@400;600&display=swap"></noscript>
 <link rel="stylesheet" href="/assets/${A.css}">
 </head>
 <body>
@@ -328,7 +328,7 @@ write("404.html", `<!doctype html>
 <title>Page not found | Cyber HAYKALAH</title>
 <meta name="robots" content="noindex">
 <link rel="icon" href="/assets/favicon.ico" sizes="48x48">
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=Readex+Pro:wght@600&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=Readex+Pro:wght@600&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;600&family=IBM+Plex+Sans:wght@400;600&family=Readex+Pro:wght@600&display=swap"></noscript>
 <link rel="stylesheet" href="/assets/${A.css}">
 </head>
 <body class="night" style="min-height:100vh;display:grid;place-items:center;text-align:center">

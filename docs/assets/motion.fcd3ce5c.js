@@ -43,7 +43,7 @@
   }
 
   /* ---------- reveals ---------- */
-  const heads=$$(".sec-head h2, .hero h1, .lp-hero h1, .cta h2, .ro-grid h2, .comp-grid h2");
+  const heads=$$(".sec-head h2, .cta h2, .ro-grid h2, .comp-grid h2");
   if(!RM)heads.forEach(split);
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12,rootMargin:"0px 0px -6% 0px"});
   $$(".rv").forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+"ms";io.observe(el)});
@@ -61,7 +61,12 @@
     if(WIDE()&&FINE){doc.classList.add("snap","cards")}
     else doc.classList.add("snap-soft");
   }
-  setSnap(); addEventListener("resize",setSnap);
+  // Snap is armed on the first real input: enabling it at load nudges the scroll position,
+  // which ends the browser's largest-paint measurement before the first paint.
+  let armed=false;
+  const arm=()=>{if(armed)return;armed=true;setSnap()};
+  ["wheel","touchstart","keydown","pointerdown"].forEach(t=>addEventListener(t,arm,{passive:true,once:true}));
+  addEventListener("resize",()=>{if(armed)setSnap()});
 
   const NAMES={top:["Home","الرئيسية"],vision:["Vision","الرؤية"],regulation:["Regulation","التنظيم"],loop:["Operations","العمليات"],services:["Services","الخدمات"],dashboard:["Dashboard","لوحة العمليات"],compliance:["Compliance","الامتثال"],assessment:["Assessment","التقييم"],why:["Why us","لماذا نحن"],roadmap:["Roadmap","خارطة الطريق"],contact:["Contact","تواصل"]};
   const STAGE=["#0066FF","#00D1FF","#8B5CFF","#FF3D9A","#FF8A3D","#C6F432"];

@@ -12,8 +12,9 @@
   function size(svg){const w=svg.clientWidth||svg.parentNode.clientWidth, h=svg.clientHeight||svg.parentNode.clientHeight;svg.setAttribute("viewBox",`0 0 ${w} ${h}`);return [w,h]}
 
   /* ---------- lattice ---------- */
+  const MOB=()=>innerWidth<720, dens=n=>MOB()?Math.round(n*.55):n;
   function lattice(svg,opt){
-    const [w,h]=size(svg), a=opt.a, b=a*R, flip=opt.mirror&&ar();
+    const [w,h]=size(svg), a=opt.a*(MOB()?1.45:1), b=a*R, flip=opt.mirror&&ar();
     const cols=Math.ceil(w/(2*a))+2, rows=Math.ceil(h/b)+2; let s="";
     for(let j=0;j<rows;j++)for(let i=-1;i<cols;i++){
       const cx=2*a*i+(j%2?a:0), cy=b*j, x=flip?1-cx/w:cx/w;
@@ -28,7 +29,7 @@
   /* ---------- generated tech/cyber backgrounds ---------- */
   function circuit(svg,o){
     const [w,h]=size(svg), st=o.step||36; let s="";
-    for(let n=0;n<o.n;n++){
+    for(let n=0;n<dens(o.n);n++){
       let x=Math.round(rnd()*w/st)*st, y=Math.round(rnd()*h/st)*st, d=`M${x} ${y}`;
       const segs=3+Math.floor(rnd()*4);
       for(let k=0;k<segs;k++){const len=st*(1+Math.floor(rnd()*4));
@@ -46,7 +47,7 @@
   }
   function network(svg,o){
     const [w,h]=size(svg), pts=[]; let s="";
-    for(let n=0;n<o.n;n++){const bias=ar()?1-Math.pow(rnd(),.6):Math.pow(rnd(),.6);pts.push([bias*w,rnd()*h])}
+    for(let n=0;n<dens(o.n);n++){const bias=ar()?1-Math.pow(rnd(),.6):Math.pow(rnd(),.6);pts.push([bias*w,rnd()*h])}
     pts.forEach((p,i)=>{const near=pts.map((q,j)=>[j,(q[0]-p[0])**2+(q[1]-p[1])**2]).sort((a,b)=>a[1]-b[1]).slice(1,3);
       near.forEach(([j])=>{if(j>i)s+=`<line x1="${p[0]}" y1="${p[1]}" x2="${pts[j][0]}" y2="${pts[j][1]}" stroke="${o.c}" stroke-opacity="${o.op}" stroke-width="1"/>`})});
     pts.forEach(p=>{const lit=rnd()<.18;
@@ -66,7 +67,7 @@
     const [w,h]=size(svg), hz=h*o.hz, vx=w/2; let s=`<defs><linearGradient id="fl${svg.id}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${o.c}" stop-opacity="0"/><stop offset="1" stop-color="${o.c}" stop-opacity="${o.op}"/></linearGradient></defs>`;
     for(let k=-24;k<=24;k++){s+=`<line x1="${vx+k*14}" y1="${hz}" x2="${vx+k*(w/10)}" y2="${h}" stroke="url(#fl${svg.id})"/>`}
     for(let k=1;k<16;k++){const y=hz+(h-hz)*Math.pow(k/15,2.1);s+=`<line x1="0" y1="${y}" x2="${w}" y2="${y}" stroke="${o.c}" stroke-opacity="${o.op*(k/15)}"/>`}
-    for(let k=0;k<o.towers;k++){const x=rnd()*w, bw=10+rnd()*26, bh=30+rnd()*Math.min(hz*.9,240);s+=`<rect x="${x}" y="${hz-bh}" width="${bw}" height="${bh}" fill="none" stroke="${o.c}" stroke-opacity="${o.op*.9}"/>`;
+    for(let k=0;k<dens(o.towers);k++){const x=rnd()*w, bw=10+rnd()*26, bh=30+rnd()*Math.min(hz*.9,240);s+=`<rect x="${x}" y="${hz-bh}" width="${bw}" height="${bh}" fill="none" stroke="${o.c}" stroke-opacity="${o.op*.9}"/>`;
       for(let r=hz-bh+8;r<hz-6;r+=10)if(rnd()<.18)s+=`<rect x="${x+3}" y="${r}" width="${bw-6}" height="3" fill="${o.hi}" class="lit-cell" style="--d:${(6+rnd()*4).toFixed(1)}s;--dl:-${(rnd()*9).toFixed(1)}s;--o1:.8;--o2:.15"/>`}
     svg.innerHTML=s;
   }
@@ -78,20 +79,30 @@
     svg.innerHTML=s;
   }
 
+  // The hero backgrounds draw at once; the others when their section comes within 600px of the screen, and redrawn on resize.
+  const BG=[
+    ["heroLattice",7,s=>lattice(s,{a:15,unlit:"#ECE8DF",colors:SPEC,mirror:true,litFn:(x,y)=>rnd()<(0.05+0.22*x*(1-y*.5))})],
+    ["bgHero",11,s=>circuit(s,{n:26,chips:3,c:"#0066FF",hi:"#00D1FF",op:.10})],
+    ["bgVision",13,s=>network(s,{n:70,c:"#0066FF",op:.16})],
+    ["bgReg",15,s=>circuit(s,{n:40,chips:6,c:"#0066FF",hi:"#00A8E8",op:.13})],
+    ["bgLoop",19,s=>rings(s,{cy:.5,c:"#3D5AB5",hi:"#00D1FF",op:.22,blips:22,sweep:true})],
+    ["bgSvc",23,s=>circuit(s,{n:34,chips:5,c:"#8B5CFF",hi:"#0066FF",op:.10})],
+    ["bgDash",25,s=>floor(s,{hz:.3,c:"#3D5AB5",hi:"#00D1FF",op:.4,towers:22})],
+    ["bgComp",27,s=>network(s,{n:60,c:"#8B5CFF",op:.14})],
+    ["bgAssess",29,s=>topo(s,{n:22,c:"#0066FF",hi:"#00A8E8",op:.10})],
+    ["bgWhy",31,s=>lattice(s,{a:13,unlit:"transparent",stroke:"#E2DED4",colors:["#00D1FF"],lit:.06,mirror:true})],
+    ["bgRoad",35,s=>floor(s,{hz:.55,c:"#0066FF",hi:"#00D1FF",op:.22,towers:18})],
+    ["ctaLattice",33,s=>lattice(s,{a:16,unlit:"#111C42",colors:SPEC,mirror:true,litFn:(x,y)=>rnd()<(0.02+0.2*x)})]
+  ];
+  let bgio;
   function drawAll(){
-    seed=7; lattice($("heroLattice"),{a:15,unlit:"#ECE8DF",colors:SPEC,mirror:true,litFn:(x,y)=>rnd()<(0.05+0.22*x*(1-y*.5))});
-    seed=11; circuit($("bgHero"),{n:26,chips:3,c:"#0066FF",hi:"#00D1FF",op:.10});
-    seed=13; network($("bgVision"),{n:70,c:"#0066FF",op:.16});
-    seed=15; circuit($("bgReg"),{n:40,chips:6,c:"#0066FF",hi:"#00A8E8",op:.13});
-    seed=19; rings($("bgLoop"),{cy:.5,c:"#3D5AB5",hi:"#00D1FF",op:.22,blips:22,sweep:true});
-    seed=23; circuit($("bgSvc"),{n:34,chips:5,c:"#8B5CFF",hi:"#0066FF",op:.10});
-    seed=25; floor($("bgDash"),{hz:.3,c:"#3D5AB5",hi:"#00D1FF",op:.4,towers:22});
-    seed=27; network($("bgComp"),{n:60,c:"#8B5CFF",op:.14});
-    seed=29; topo($("bgAssess"),{n:22,c:"#0066FF",hi:"#00A8E8",op:.10});
-    seed=31; lattice($("bgWhy"),{a:13,unlit:"transparent",stroke:"#E2DED4",colors:["#00D1FF"],lit:.06,mirror:true});
-    seed=35; floor($("bgRoad"),{hz:.55,c:"#0066FF",hi:"#00D1FF",op:.22,towers:18});
-    seed=33; lattice($("ctaLattice"),{a:16,unlit:"#111C42",colors:SPEC,mirror:true,litFn:(x,y)=>rnd()<(0.02+0.2*x)});
+    if(bgio)bgio.disconnect();
+    bgio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const d=BG.find(x=>x[0]===e.target.id);seed=d[1];d[2](e.target);bgio.unobserve(e.target)}),{rootMargin:"600px 0px"});
+    BG.forEach(d=>{const el=$(d[0]);if(!el)return;el.innerHTML="";if(/^(heroLattice|bgHero)$/.test(d[0])){seed=d[1];d[2](el)}else bgio.observe(el)});
   }
+  // pause the looping background animations of sections that are off screen
+  const offio=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle("off",!e.isIntersecting)));
+  document.querySelectorAll("header.hero, section").forEach(s=>offio.observe(s));
   let rt, lw=innerWidth; addEventListener("resize",()=>{clearTimeout(rt);rt=setTimeout(()=>{if(Math.abs(innerWidth-lw)>40){lw=innerWidth;drawAll();renderAsset()}},250)});
 
   /* nav, reveals and section motion live in motion.js (shared with the service pages) */
@@ -131,7 +142,7 @@
   const SL={force:["In force","سارٍ","st-force"],draft:["Draft","مسودة","st-draft"],notified:["As notified","كما أُعلن","st-notified"]};
   const rg=$("regGrid"); let regFilter="all";
   function renderReg(){
-    rg.innerHTML=REG.map(r=>`<article class="reg" data-f="${r.f}"><div class="top"><span class="code">${L(r,"c")}</span><span class="status ${SL[r.s][2]}">${SL[r.s][ar()?1:0]}</span></div><h4>${L(r,"t")}</h4><div class="figure">${L(r,"fig")}<small>${L(r,"u")}</small></div><p>${L(r,"p")}</p><div class="who"><b>${ar()?"يُلزم:":"Binds:"}</b> ${L(r,"w")}</div></article>`).join("");
+    rg.innerHTML=REG.map(r=>`<article class="reg" data-f="${r.f}"><div class="top"><span class="code">${L(r,"c")}</span><span class="status ${SL[r.s][2]}">${SL[r.s][ar()?1:0]}</span></div><h3>${L(r,"t")}</h3><div class="figure">${L(r,"fig")}<small>${L(r,"u")}</small></div><p>${L(r,"p")}</p><div class="who"><b>${ar()?"يُلزم:":"Binds:"}</b> ${L(r,"w")}</div></article>`).join("");
     applyRegFilter();
   }
   function applyRegFilter(){rg.querySelectorAll(".reg").forEach(c=>c.classList.toggle("dim",regFilter!=="all"&&c.dataset.f!==regFilter))}
